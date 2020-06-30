@@ -1,0 +1,94 @@
+----Roadmap----
+
+Overall Organization
+	Each minigame would need to be its own scene, and they get pseudorandomly loaded in
+	when the previous game gets finished. Inbetween each minigame, a splashscreen of a few seconds
+	shows current standings before going to the next screen
+
+	Thinks to think about:
+		Handling draws (make next game worth 2x?)
+		Implementing drinking (not sure if we can hook up the machine in time, but
+				       we can have an ingame tally of drinks that are to be
+				       taken, maybe every few minigames theres a longer pause
+				       to have the players take their drinks)
+		Tournament Mode?
+		----->>>>>Do we focus on having it run on just a laptop for now and fit it into the pi later?<<<--------
+		
+
+Main Menu
+	On Start
+		-> Send to prep screen
+	Settings
+		->Volume, res, fullscreen
+	Quit
+		->Quit
+
+
+Prep Screen
+	-> Score to win
+	-> Game speed/difficulty
+	-> Controller assignment
+
+Tournament Mode
+	-> Could be really cool, especially at big events
+	-> People enter their names and whatever
+	-> Could be some persistent lifeline between matches
+
+Minigames
+
+These should take less than 10 seconds, and be very easily recognizable
+
+	Quickdraw
+		-> Hidden, random timer
+		-> Ready.... Steady.... Draw!! type thing
+		-> Fastest reaction time after Draw!! popup
+		-> Chance of bait Draw!! popups
+
+	Rock Paper Scissors
+		-> 1 round
+		-> Redo on draw
+		-> Everyone's gonna do roche roche roche, so penalize them so that they can fuck off after a bunch in a row
+
+	Price is Right Timer thing
+		-> Get as close to a certain amount of seconds without passing it
+		-> Timer is initially shown, but disappears after a few seconds
+		
+	Coin Toss
+		-> Literally a coin toss, fuck you
+
+	Versus Snake
+		-> Like Agar.io, but regular snake 
+		-> Really fast
+
+	Google Dino Run
+		-> First to die loses
+		-> But it's fast so you die quick
+
+	Tug-of-War
+		-> Button mash battle
+		-> Winner declared when difference of presses passes a certain thresh,
+			or whoever is ahead after x seconds
+
+	Button sequences
+		-> Input a random sequence as fast as possible
+
+	War 
+		-> The card game, just draw a card
+	
+	Dice throw
+		-> Throw dice, fuck you if you lose
+
+	DDR
+		-> Tiny rhythm game
+
+	Add whatever you can think of, I'd like at least 10 of them, eventually there can be like 50+
+
+QoL/UI stuff
+
+	Something that could be cool is to let players pick a color to represent themselves,
+	and that color be reflected in the minigames
+
+	I'll try to see if I can write some music for the game, I have an idea of dynamic music 
+	changing to reflect the current winner
+
+	
