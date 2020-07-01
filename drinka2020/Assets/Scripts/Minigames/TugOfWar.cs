@@ -5,7 +5,7 @@ using UnityEngine;
 public class TugOfWar : Minigame
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         gameName = "Tug of War";
     }

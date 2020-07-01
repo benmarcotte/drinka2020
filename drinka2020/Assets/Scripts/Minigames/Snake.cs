@@ -5,7 +5,7 @@ using UnityEngine;
 public class Snake : Minigame
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         gameName = "Snake";
     }

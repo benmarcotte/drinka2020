@@ -5,7 +5,7 @@ using UnityEngine;
 public class RockPaperScissors : Minigame
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         gameName = "Rock, Paper, Scissors";
     }
