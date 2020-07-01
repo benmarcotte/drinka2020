@@ -5,7 +5,7 @@ using UnityEngine;
 public class NoInternet : Minigame
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         gameName = "No Internet";
     }

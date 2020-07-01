@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer : Minigame
 {
-    void Start()
+    void Awake()
     {
         gameName = "Timer";
     }
