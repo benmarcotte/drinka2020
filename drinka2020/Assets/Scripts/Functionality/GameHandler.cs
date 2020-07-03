@@ -11,24 +11,25 @@ public class GameHandler : MonoBehaviour
     [SerializeField] public Player leftPlayer;
     [SerializeField] public bool isInOvertime;
     [SerializeField] public Minigame[] minigames;
+    [SerializeField] public Minigame activeMinigame;
 
     // Start is called before the first frame update
 
     private void Awake()
     {
         int gameHandlerCount = FindObjectsOfType<GameHandler>().Length;
-        if(gameHandlerCount > 1)
+        if (gameHandlerCount > 1)
         {
             Destroy(gameObject);
-        } 
+        }
         else
         {
             DontDestroyOnLoad(gameObject);
-        }
+        }   
     }
     void Start()
     {
-        
+        this.players = new Player[] { };
     }
 
     public void minigameEnd()
