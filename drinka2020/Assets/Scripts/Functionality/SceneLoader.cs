@@ -37,6 +37,7 @@ public class SceneLoader : MonoBehaviour
         //SceneManager.LoadScene(3 + i); //to change if more functionality screens are added
         //SceneManager.LoadScene(gameHandler.activeMinigame.gameName);
         //Going to implement first screen, probably with a 3-2-1
+        SceneManager.LoadScene("Next Game");
     }
 
     public void toNextScreen()

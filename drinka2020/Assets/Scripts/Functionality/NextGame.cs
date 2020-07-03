@@ -15,7 +15,7 @@ public class NextGame : MonoBehaviour
     {
         pickNextMinigame();
         StartCoroutine(scroll());
-        SceneManager.LoadScene(nextMinigame.gameName);
+        StartCoroutine(wait(2));
     }
 
     IEnumerator wait(int seconds)
@@ -43,6 +43,8 @@ public class NextGame : MonoBehaviour
            yield return new WaitForSecondsRealtime(0.1f);
         }
         this.GetComponent<Text>().text = nextMinigame.gameName;
+        yield return new WaitForSecondsRealtime(3);
+        SceneManager.LoadScene(nextMinigame.gameName);
     }
 
     // Update is called once per frame
