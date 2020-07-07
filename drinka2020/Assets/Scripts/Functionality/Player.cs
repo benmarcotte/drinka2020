@@ -5,22 +5,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int score;
     public string color;
+    public int score;
 
+    //implement controller assignment
+
+    public Player()
+    {
+        this.score = 0;
+    }
 
     private void Awake()
     {
-        int playerCount;
+        
     }
     void Start()
     {
         
-    }
-
-    public void addScore(int score)
-    {
-        this.score = this.score + score;
     }
 
     // Update is called once per frame

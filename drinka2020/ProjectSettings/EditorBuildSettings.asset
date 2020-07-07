@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Functionality/Settings.unity
     guid: b6fcab8b65626444bb808246b60c4fc9
   - enabled: 1
+    path: Assets/Scenes/Functionality/Next Game.unity
+    guid: 242a598d50c5d0d4cb5c147571042f07
+  - enabled: 1
     path: Assets/Scenes/Minigames/DDR.unity
     guid: 037a11f57135b734a9225b5ef2f35659
   - enabled: 1
@@ -23,9 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/Flip a Coin.unity
     guid: 1f73d17e068709148863a7ad682cf758
-  - enabled: 1
-    path: Assets/Scenes/Functionality/Intermission.unity
-    guid: 242a598d50c5d0d4cb5c147571042f07
   - enabled: 1
     path: Assets/Scenes/Minigames/No Internet.unity
     guid: 864c3827c76d16b409a951e224714723
