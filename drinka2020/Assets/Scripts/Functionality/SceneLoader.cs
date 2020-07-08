@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] GameHandler gameHandler;
 
     public void quitGame()
     {
@@ -15,7 +14,7 @@ public class SceneLoader : MonoBehaviour
 
     public void toPrepScene()
     {
-        gameHandler.players = new Player[] { 
+        GameHandler.gameHandler.players = new Player[] { 
             new Player(), new Player() }; //implement controller assignment
         SceneManager.LoadScene(1);
     }
@@ -32,10 +31,10 @@ public class SceneLoader : MonoBehaviour
 
     public void startGame()
     {
-        int i = UnityEngine.Random.Range(0, gameHandler.minigames.Length);
-        gameHandler.activeMinigame = gameHandler.minigames[i];
+        int i = UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length);
+        GameHandler.gameHandler.activeMinigame = GameHandler.gameHandler.minigames[i];
         //SceneManager.LoadScene(3 + i); //to change if more functionality screens are added
-        //SceneManager.LoadScene(gameHandler.activeMinigame.gameName);
+        //SceneManager.LoadScene(GameHandler.gameHandler.activeMinigame.gameName);
         //Going to implement first screen, probably with a 3-2-1
         SceneManager.LoadScene("Next Game");
     }

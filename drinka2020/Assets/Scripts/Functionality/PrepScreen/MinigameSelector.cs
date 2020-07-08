@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 public class MinigameSelector : MonoBehaviour
 {
     //[SerializeField] Minigame[] minigames;
-    [SerializeField] GameHandler gameHandler;
     [SerializeField] UnityEngine.UI.Toggle toggle;
     [SerializeField] UnityEngine.UI.Image toggleParent;
     //[SerializeField] Toggle[] toggles;
@@ -18,14 +17,14 @@ public class MinigameSelector : MonoBehaviour
         //gameHandler = FindObjectOfType<GameHandler>();
         //minigames = gameHandler.minigames;
         //toggles = new Toggle[minigames.Length];
-        for (int i = 0; i < gameHandler.minigames.Length; i++)
+        for (int i = 0; i < GameHandler.gameHandler.minigames.Length; i++)
         {
             UnityEngine.UI.Toggle newToggle = Instantiate(toggle, toggleParent.transform);
-            newToggle.name = gameHandler.minigames[i].gameName;
+            newToggle.name = GameHandler.gameHandler.minigames[i].gameName;
             
             //GameObject toggle = new GameObject();
             newToggle.transform.SetParent(toggleParent.transform);
-            newToggle.GetComponent<UnityEngine.UI.Toggle>().GetComponentInChildren<Text>().text = gameHandler.minigames[i].gameName;
+            newToggle.GetComponent<UnityEngine.UI.Toggle>().GetComponentInChildren<Text>().text = GameHandler.gameHandler.minigames[i].gameName;
             newToggle.transform.localPosition = new Vector2(pivotX, pivotY);
             pivotY = pivotY - newToggle.GetComponent<RectTransform>().sizeDelta.y;
             //toggles[i] = gameObject.AddComponent<Toggle>();
