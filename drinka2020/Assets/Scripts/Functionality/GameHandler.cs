@@ -12,6 +12,8 @@ public class GameHandler : MonoBehaviour
     [SerializeField] public bool isInOvertime;
     [SerializeField] public Minigame[] minigames;
     [SerializeField] public Minigame activeMinigame;
+    public static GameHandler gameHandler;
+    public static Color[] colors;
 
     // Start is called before the first frame update
 
@@ -24,12 +26,13 @@ public class GameHandler : MonoBehaviour
         }
         else
         {
+            gameHandler = gameObject.GetComponent<GameHandler>();
             DontDestroyOnLoad(gameObject);
         }   
     }
     void Start()
     {
-        this.players = new Player[] { };
+        colors = new Color[] { new Color(0, 1, 1, 1), new Color(0, 0, 1, 1), new Color(1, 0, 0, 1), new Color(1, 0.92f, 0.016f, 1), new Color(0, 1, 0, 1), new Color(1, 0, 1, 1) };
     }
 
     public void minigameEnd()
@@ -69,6 +72,5 @@ public class GameHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

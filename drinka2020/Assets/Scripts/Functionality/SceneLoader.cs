@@ -14,8 +14,6 @@ public class SceneLoader : MonoBehaviour
 
     public void toPrepScene()
     {
-        GameHandler.gameHandler.players = new Player[] { 
-            new Player(), new Player() }; //implement controller assignment
         SceneManager.LoadScene(1);
     }
 
