@@ -29,16 +29,15 @@ public class SceneLoader : MonoBehaviour
 
     public void startGame()
     {
-        int i = UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length);
-        GameHandler.gameHandler.activeMinigame = GameHandler.gameHandler.minigames[i];
-        //SceneManager.LoadScene(3 + i); //to change if more functionality screens are added
-        //SceneManager.LoadScene(GameHandler.gameHandler.activeMinigame.gameName);
-        //Going to implement first screen, probably with a 3-2-1
-        SceneManager.LoadScene("Next Game");
+        SceneManager.LoadScene(GameHandler.gameHandler.activeMinigame.gameName);
     }
 
     public void toNextScreen()
     {
+        if((GameHandler.gameHandler.leftPlayer.drinks > 10 || GameHandler.gameHandler.rightPlayer.drinks > 10) && UnityEngine.Random.Range(0, 1) == 1)
+        {
+            SceneManager.LoadScene("Intermission");
+        }
         SceneManager.LoadScene("Next Game");
     }
 
