@@ -97,6 +97,7 @@ MonoBehaviour:
   playerNumber: 0
   gameHandler: {fileID: 0}
   colorInt: 0
+  playerName: 
 --- !u!114 &5435381638149605513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,13 +249,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: 0
   confirmed: 0
-  canvas: {fileID: 0}
-  buttonColor: {r: 0, g: 0, b: 0, a: 0}
-  back:
-    m_Name: Back
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 52f4e0df-f7dd-481b-b363-f3c636e3b13b
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []

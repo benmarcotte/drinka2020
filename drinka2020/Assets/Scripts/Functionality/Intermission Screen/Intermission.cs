@@ -13,9 +13,4 @@ public class Intermission : MonoBehaviour
         GameHandler.gameHandler.rightPlayer.GetComponent<PlayerInput>().actions = actions;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -34,11 +34,11 @@ public class PrepAssigner : MonoBehaviour
         }
         if (controls.confirmed)
         {
-            GetComponent<Image>().sprite = Resources.Load<Sprite>("check");
+            GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/check");
         }
         if (!controls.confirmed)
         {
-            GetComponent<Image>().sprite = Resources.Load<Sprite>("button_a");
+            GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/button_a");
         }
         if(controls.position == -1 && !controls.confirmed)
         {

@@ -1453,6 +1453,7 @@ MonoBehaviour:
   players:
   - {fileID: 0}
   maxScore: 0
+  sipThreshold: 0
   rightPlayer: {fileID: 0}
   leftPlayer: {fileID: 0}
   isInOvertime: 0
@@ -1469,6 +1470,7 @@ MonoBehaviour:
   - {fileID: 1986178406}
   - {fileID: 166628646}
   activeMinigame: {fileID: 0}
+  winner: {fileID: 0}
 --- !u!114 &1321364984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1757,7 +1759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 0
   m_MaxPlayerCount: 2
   m_AllowJoining: 1
   m_JoinBehavior: 0

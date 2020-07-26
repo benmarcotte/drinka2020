@@ -18,11 +18,17 @@ public class SipCounter : MonoBehaviour
         {
             player = GameHandler.gameHandler.rightPlayer;
         }
+        GetComponent<Text>().color = player.color;
     }
 
     // Update is called once per frame
     void Update()
     {
         GetComponent<Text>().text = player.drinks.ToString();
+    }
+
+    public void OnSip()
+    {
+        player.drinks--;
     }
 }

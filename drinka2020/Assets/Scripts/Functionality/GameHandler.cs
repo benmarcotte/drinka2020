@@ -5,15 +5,18 @@ using UnityEngine;
 public class GameHandler : MonoBehaviour
 {
 
-    [SerializeField] public Player[] players;   //all currently initialized players (for tourney mode, can be more than 2)
-    [SerializeField] public int maxScore;
-    [SerializeField] public Player rightPlayer; //currently active left or right players
-    [SerializeField] public Player leftPlayer;
-    [SerializeField] public bool isInOvertime;
+    public Player[] players;   //all currently initialized players (for tourney mode, can be more than 2)
+    public int maxScore;
+    public int sipThreshold;
+    public Player rightPlayer; //currently active left or right players
+    public Player leftPlayer;
+    public bool isInOvertime;
     [SerializeField] public Minigame[] minigames;
-    [SerializeField] public Minigame activeMinigame;
+    public Minigame activeMinigame;
     public static GameHandler gameHandler;
     public static Color[] colors;
+    public static string[] colorNames;
+    public Player winner;
 
     // Start is called before the first frame update
 
@@ -32,13 +35,14 @@ public class GameHandler : MonoBehaviour
     }
     void Start()
     {
-        colors = new Color[] { new Color(0, 1, 1, 1), new Color(0, 0, 1, 1), new Color(1, 0, 0, 1), new Color(1, 0.92f, 0.016f, 1), new Color(0, 1, 0, 1), new Color(1, 0, 1, 1) };
+        colors = new Color[] { new Color(0, 1, 1, 1), new Color(0, 0, 1, 1), new Color(1, 0, 0, 1), new Color(1, 0.92f, 0.016f, 1), new Color(0, 1, 0, 1), new Color(1, 0, 1, 1), new Color(0, 1, 0.5f), new Color(1, 0.6f, 1), new Color(1, 0.5f, 0) };
+        colorNames = new string[] { "Cyan", "Blue", "Red", "Yellow", "Green", "Magenta", "Teal", "Pink", "Orange" };
     }
 
     public void minigameEnd()
     {
         checkWin();
-        SceneLoader.toIntermissionScene();
+        SceneLoader.toNextScreen();
 
     }
 
@@ -48,29 +52,36 @@ public class GameHandler : MonoBehaviour
         {
             if (rightPlayer.score > leftPlayer.score + 1)
             {
-                rightPlayer.win();
+                win(rightPlayer);
             }
             if (leftPlayer.score > rightPlayer.score + 1)
             {
-                leftPlayer.win();
+                win(leftPlayer);
             }
         }
         else
         {
             if (rightPlayer.score >= maxScore)
             {
-                rightPlayer.win();
+                win(rightPlayer);
             }
             if (leftPlayer.score >= maxScore)
             {
-                leftPlayer.win();
+                win(leftPlayer);
             }
         }
+    }
+
+    void win(Player player)
+    {
+        winner = player;
+        SceneLoader.toWinScene();
     }
 
 
     // Update is called once per frame
     void Update()
     {
+
     }
 }

@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public int playerNumber;
     public GameHandler gameHandler = GameHandler.gameHandler;
     public int colorInt;
+    public bool giveColor;
+    public string playerName;
 
     //implement controller assignment
 
@@ -25,46 +27,42 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        
+        //DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
+        score = 0;
+        drinks = 0;
         GameHandler.gameHandler.players = FindObjectsOfType<Player>();
         playerNumber = FindObjectsOfType<Player>().Length;
-        if (GameHandler.gameHandler.players.Length == 1)
+        if (giveColor)
         {
-            colorInt = UnityEngine.Random.Range(0, GameHandler.colors.Length);
-            color = GameHandler.colors[colorInt];
-        }
-        else
-        {
-            colorInt = UnityEngine.Random.Range(0, GameHandler.colors.Length);
-            for(int i = 0; i < GameHandler.gameHandler.players.Length; i++)
+            if (GameHandler.gameHandler.players.Length == 1)
             {
-                if(colorInt == GameHandler.gameHandler.players[i].colorInt)
+                colorInt = UnityEngine.Random.Range(0, GameHandler.colors.Length);
+                color = GameHandler.colors[colorInt];
+                playerName = GameHandler.colorNames[colorInt];
+            }
+            else
+            {
+                colorInt = UnityEngine.Random.Range(0, GameHandler.colors.Length);
+                for(int i = 0; i < GameHandler.gameHandler.players.Length; i++)
                 {
-                    if(colorInt+1 == GameHandler.colors.Length)
+                    if(colorInt == GameHandler.gameHandler.players[i].colorInt)
                     {
-                        colorInt = 0;
-                    }
-                    else
-                    {
-                        colorInt = UnityEngine.Random.Range(0, GameHandler.colors.Length);
+                        if(colorInt+1 == GameHandler.colors.Length)
+                        {
+                            colorInt = 0;
+                        }
+                        else
+                        {
+                            colorInt = UnityEngine.Random.Range(0, GameHandler.colors.Length);
+                        }
                     }
                 }
+                color = GameHandler.colors[colorInt];
+                playerName = GameHandler.colorNames[colorInt];
             }
-            color = GameHandler.colors[colorInt];
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    internal void win()
-    {
-        throw new NotImplementedException();
     }
 }
