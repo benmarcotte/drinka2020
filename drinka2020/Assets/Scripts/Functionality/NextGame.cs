@@ -24,13 +24,15 @@ public class NextGame : MonoBehaviour
 
     public void pickNextMinigame()
     {
-        int i = UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length);
-        nextMinigame = GameHandler.gameHandler.minigames[i];
-        if (nextMinigame == GameHandler.gameHandler.activeMinigame)
-        {
-            i = UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length);
-            nextMinigame = GameHandler.gameHandler.minigames[i];
-        }
+        //int i = UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length);
+        //nextMinigame = GameHandler.gameHandler.minigames[i];
+        //if (nextMinigame == GameHandler.gameHandler.activeMinigame)
+        //{
+        //    i = UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length);
+        //    nextMinigame = GameHandler.gameHandler.minigames[i];
+        //}
+        //GameHandler.gameHandler.activeMinigame = nextMinigame;
+        nextMinigame = GameHandler.gameHandler.minigames[8];
         GameHandler.gameHandler.activeMinigame = nextMinigame;
     }
 

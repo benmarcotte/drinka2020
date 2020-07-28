@@ -129,6 +129,7 @@ public class Card : MonoBehaviour
 
     public void sendToStack(CardStack destinationStack)
     {
+        stack.topCard = null;
         image.enabled = true;
         background.enabled = true;
         if(stack != null)

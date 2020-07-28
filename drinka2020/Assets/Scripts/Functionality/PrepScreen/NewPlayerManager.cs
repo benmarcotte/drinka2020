@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class NewPlayerManager : MonoBehaviour
 {
@@ -16,12 +17,12 @@ public class NewPlayerManager : MonoBehaviour
         else
         {
             DontDestroyOnLoad(gameObject);
+
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -30,12 +31,12 @@ public class NewPlayerManager : MonoBehaviour
         
     }
 
-    public void playerJoined()
+    public void OnPlayerJoined()
     {
         this.playerCount++;
     }
 
-    public void playerLeft()
+    public void OnPlayerLeft()
     {
         this.playerCount--;
     }

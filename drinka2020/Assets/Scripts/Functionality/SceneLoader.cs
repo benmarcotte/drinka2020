@@ -31,6 +31,7 @@ public class SceneLoader : MonoBehaviour
     public void startGame()
     {
         SceneManager.LoadScene(GameHandler.gameHandler.activeMinigame.gameName);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameHandler.gameHandler.activeMinigame.gameName));
     }
 
     public static void toNextScreen()

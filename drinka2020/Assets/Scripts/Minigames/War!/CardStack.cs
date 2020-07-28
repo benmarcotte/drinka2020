@@ -16,6 +16,8 @@ public class CardStack : MonoBehaviour
     public UnityEngine.UI.Image background;
     public Sprite back;
     public bool usePlayerColor;
+    public bool isLeftPlayer;
+    public bool findPlayer;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -61,6 +63,18 @@ public class CardStack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (findPlayer)
+        {
+            if (isLeftPlayer)
+            {
+                player = GameHandler.gameHandler.leftPlayer;
+            }
+            else
+            {
+                player = GameHandler.gameHandler.rightPlayer;
+            }
+        }
+        
         if (cards.Count > 0)
         {
             topCard = cards.First.Value;
@@ -68,19 +82,7 @@ public class CardStack : MonoBehaviour
             topCard.background.enabled = true;
             background = topCard.background;
         }
-        //{
-        //    if (revealed)
-        //    {
-        //    }
-        //    else
-        //    {
-        //        GetComponentsInChildren<Image>(true)[0].sprite = back;
-        //    }
-
-        //}
-        //else
-        //{
-        //}
+        
         GetComponent<Image>().enabled = false;
         GetComponentInChildren<Image>().enabled = false;
         cardArr = new Card[cards.Count];

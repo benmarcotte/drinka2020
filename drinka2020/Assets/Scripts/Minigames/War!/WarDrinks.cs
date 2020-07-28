@@ -17,6 +17,23 @@ public class WarDrinks : MonoBehaviour
     {
         
     }
+    
+    public void fumbled()
+    {
+        text.text += "Fumbled! +1\n";
+    }
+
+    public void didNothing()
+    {
+        text.text += "Did nothing! +1\n";
+        StartCoroutine(wait());
+    }
+    
+    public void bothSuck()
+    {
+        text.text += "Both players failed! +3\n";
+        StartCoroutine(wait());
+    }
 
     public void lost()
     {
@@ -26,7 +43,7 @@ public class WarDrinks : MonoBehaviour
 
     public IEnumerator wait()
     {
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(1.2f);
         text.text = "";
     }
 

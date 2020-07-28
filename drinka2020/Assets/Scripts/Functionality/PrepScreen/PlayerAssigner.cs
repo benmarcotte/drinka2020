@@ -13,14 +13,21 @@ public class PlayerAssigner : MonoBehaviour
     public Boolean rightAssigned = false;
     public Boolean countdownStarted = false;
     public static PlayerAssigner playerAssigner;
-    public int i = 3;
+    public int i;
+    public PlayerInputManager playerInputManager;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        FindObjectOfType<PlayerInputManager>().GetComponent<PlayerInputManager>().playerPrefab.GetComponent<PlayerInput>().actions = Resources.Load<InputActionAsset>("Input Settings/prepScreen");
+    }
     void Start()
     {
+        playerInputManager = FindObjectOfType<PlayerInputManager>();
+        FindObjectOfType<PlayerInputManager>().GetComponent<PlayerInputManager>().playerPrefab.GetComponent<PlayerInput>().actions = Resources.Load<InputActionAsset>("Input Settings/prepScreen");
         playerAssigner = FindObjectOfType<PlayerAssigner>();
         int i = UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length);
-        GameHandler.gameHandler.activeMinigame = GameHandler.gameHandler.minigames[i];
+        GameHandler.gameHandler.activeMinigame = GameHandler.gameHandler.minigames[7];
     }
 
     // Update is called once per frame

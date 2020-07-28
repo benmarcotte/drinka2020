@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class War : Minigame
+public class CardCountdown : MonoBehaviour
 {
+    public WarHandler warHandler;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        gameName = "War";
-    }
-
-    private void Start()
-    {
-
+        
     }
 
     // Update is called once per frame

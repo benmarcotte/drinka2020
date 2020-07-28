@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms;
 
 public class Player : MonoBehaviour
@@ -20,17 +21,15 @@ public class Player : MonoBehaviour
 
     //implement controller assignment
 
-    public Player()
-    {
-        this.score = 0;
-    }
+    
 
     private void Awake()
     {
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
+        SceneManager.activeSceneChanged += ChangePlayerControls;
         score = 0;
         drinks = 0;
         GameHandler.gameHandler.players = FindObjectsOfType<Player>();
@@ -63,6 +62,24 @@ public class Player : MonoBehaviour
                 color = GameHandler.colors[colorInt];
                 playerName = GameHandler.colorNames[colorInt];
             }
+        }
+    }
+
+    public void ChangePlayerControls(Scene current, Scene next)
+    {
+        Debug.Log("scene changed");
+        if (current == SceneManager.GetSceneByName("Prep Screen"))
+        {
+            Destroy(gameObject.GetComponent<PlayerControlsPrepScreen>());
+        }
+
+
+        if (next == SceneManager.GetSceneByName("War"))
+        {
+            gameObject.AddComponent<PlayerControlsWar>();
+            gameObject.GetComponent<PlayerControlsWar>().player = gameObject.GetComponent<Player>();
+            gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("War");
+            //GetComponent<PlayerInput>().actions = Resources.Load<InputActionAsset>("Input Settings/War");
         }
     }
 }
