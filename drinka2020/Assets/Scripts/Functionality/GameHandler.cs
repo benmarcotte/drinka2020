@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class GameHandler : MonoBehaviour
@@ -11,24 +12,27 @@ public class GameHandler : MonoBehaviour
     [SerializeField] public Player leftPlayer;
     [SerializeField] public bool isInOvertime;
     [SerializeField] public Minigame[] minigames;
+    [SerializeField] public Minigame activeMinigame;
+    public static GameHandler gameHandler;
 
     // Start is called before the first frame update
 
     private void Awake()
     {
         int gameHandlerCount = FindObjectsOfType<GameHandler>().Length;
-        if(gameHandlerCount > 1)
+        if (gameHandlerCount > 1)
         {
             Destroy(gameObject);
-        } 
+        }
         else
         {
             DontDestroyOnLoad(gameObject);
-        }
+            gameHandler = FindObjectOfType<GameHandler>();
+        }   
     }
     void Start()
     {
-        
+        this.players = new Player[] { };
     }
 
     public void minigameEnd()
