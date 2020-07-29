@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] GameHandler gameHandler;
 
     public void quitGame()
     {
@@ -15,8 +15,6 @@ public class SceneLoader : MonoBehaviour
 
     public void toPrepScene()
     {
-        gameHandler.players = new Player[] { 
-            new Player(), new Player() }; //implement controller assignment
         SceneManager.LoadScene(1);
     }
 
@@ -32,21 +30,24 @@ public class SceneLoader : MonoBehaviour
 
     public void startGame()
     {
-        int i = UnityEngine.Random.Range(0, gameHandler.minigames.Length);
-        gameHandler.activeMinigame = gameHandler.minigames[i];
-        //SceneManager.LoadScene(3 + i); //to change if more functionality screens are added
-        //SceneManager.LoadScene(gameHandler.activeMinigame.gameName);
-        //Going to implement first screen, probably with a 3-2-1
-        SceneManager.LoadScene("Next Game");
+        SceneManager.LoadScene(GameHandler.gameHandler.activeMinigame.gameName);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(GameHandler.gameHandler.activeMinigame.gameName));
     }
 
-    public void toNextScreen()
+    public static void toNextScreen()
     {
-        SceneManager.LoadScene("Next Game");
+        if((GameHandler.gameHandler.leftPlayer.drinks > GameHandler.gameHandler.sipThreshold || GameHandler.gameHandler.rightPlayer.drinks > GameHandler.gameHandler.sipThreshold) && UnityEngine.Random.Range(0, 1) == 1)
+        {
+            SceneManager.LoadScene("Intermission");
+        }
+        else
+        {
+            SceneManager.LoadScene("Next Game");
+        }
     }
 
-    internal static void toIntermissionScene()
+    public static void toWinScene()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene("win");
     }
 }

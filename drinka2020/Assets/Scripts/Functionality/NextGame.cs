@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class NextGame : MonoBehaviour
 {
-    [SerializeField] GameHandler gameHandler;
     [SerializeField] Minigame nextMinigame;
 
     // Start is called before the first frame update
@@ -25,21 +24,23 @@ public class NextGame : MonoBehaviour
 
     public void pickNextMinigame()
     {
-        int i = UnityEngine.Random.Range(0, gameHandler.minigames.Length);
-        nextMinigame = gameHandler.minigames[i];
-        if (nextMinigame == gameHandler.activeMinigame)
+        int i = UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length);
+        nextMinigame = GameHandler.gameHandler.minigames[i];
+        if (nextMinigame == GameHandler.gameHandler.activeMinigame)
         {
-            i = UnityEngine.Random.Range(0, gameHandler.minigames.Length);
-            nextMinigame = gameHandler.minigames[i];
+            i = UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length);
+            nextMinigame = GameHandler.gameHandler.minigames[i];
         }
-        gameHandler.activeMinigame = nextMinigame;
+        GameHandler.gameHandler.activeMinigame = nextMinigame;
+        nextMinigame = GameHandler.gameHandler.minigames[i];
+        GameHandler.gameHandler.activeMinigame = nextMinigame;
     }
 
     IEnumerator scroll()
     {
         for (int i = 0; i < 20; i++)
         {
-            this.GetComponent<Text>().text = gameHandler.minigames[UnityEngine.Random.Range(0, gameHandler.minigames.Length)].gameName;
+            this.GetComponent<Text>().text = GameHandler.gameHandler.minigames[UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length)].gameName;
            yield return new WaitForSecondsRealtime(0.1f);
         }
         this.GetComponent<Text>().text = nextMinigame.gameName;

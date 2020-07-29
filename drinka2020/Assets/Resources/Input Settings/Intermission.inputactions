@@ -1,0 +1,44 @@
+{
+    "name": "Intermission",
+    "maps": [
+        {
+            "name": "Intermission",
+            "id": "d097c536-cb16-4d64-a6a9-efec171a7697",
+            "actions": [
+                {
+                    "name": "Sip",
+                    "type": "Button",
+                    "id": "485e61be-8301-4259-a055-d13b583fe8e7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "996313cc-d034-41ba-8c1f-3bac83db3256",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c037341-cdd8-4678-8007-eaca97d78ba1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
