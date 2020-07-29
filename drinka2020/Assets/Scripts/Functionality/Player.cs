@@ -73,13 +73,26 @@ public class Player : MonoBehaviour
             Destroy(gameObject.GetComponent<PlayerControlsPrepScreen>());
         }
 
+        if (current == SceneManager.GetSceneByName("War"))
+        {
+            Destroy(gameObject.GetComponent<PlayerControlsWar>());
+        }
+
+        //Everything above destroys current controller component
+        //Everything under adds its own controller component
 
         if (next == SceneManager.GetSceneByName("War"))
         {
             gameObject.AddComponent<PlayerControlsWar>();
             gameObject.GetComponent<PlayerControlsWar>().player = gameObject.GetComponent<Player>();
             gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("War");
-            //GetComponent<PlayerInput>().actions = Resources.Load<InputActionAsset>("Input Settings/War");
+        }
+
+        if (next == SceneManager.GetSceneByName("Quickdraw"))
+        {
+            gameObject.AddComponent<PlayerControlsQuickdraw>();
+            gameObject.GetComponent<PlayerControlsQuickdraw>().player = gameObject.GetComponent<Player>();
+            gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Quickdraw");
         }
     }
 }

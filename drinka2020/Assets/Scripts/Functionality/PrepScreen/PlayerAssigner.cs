@@ -27,7 +27,7 @@ public class PlayerAssigner : MonoBehaviour
         FindObjectOfType<PlayerInputManager>().GetComponent<PlayerInputManager>().playerPrefab.GetComponent<PlayerInput>().actions = Resources.Load<InputActionAsset>("Input Settings/prepScreen");
         playerAssigner = FindObjectOfType<PlayerAssigner>();
         int i = UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length);
-        GameHandler.gameHandler.activeMinigame = GameHandler.gameHandler.minigames[7];
+        GameHandler.gameHandler.activeMinigame = GameHandler.gameHandler.minigames[3];
     }
 
     // Update is called once per frame

@@ -410,6 +410,77 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Quickdraw"",
+            ""id"": ""e54ebe2e-36dd-487e-a18f-b9a1ca7c36b4"",
+            ""actions"": [
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""772ce9ce-bd70-44d3-a35b-e3b2b7e1988d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""85b6f78e-d7d8-485f-b78e-2b0aa6153330"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""87e3baa8-3c81-42ab-8849-4b24f46661c6"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9e20e225-57e0-4485-8ba4-b76fae6e7ff5"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7558bcf4-02f5-45eb-968e-6fc383568a14"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec849df6-ab07-4109-b430-41f29c546e9d"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -484,6 +555,9 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         // War
         m_War = asset.FindActionMap("War", throwIfNotFound: true);
         m_War_Draw = m_War.FindAction("Draw", throwIfNotFound: true);
+        // Quickdraw
+        m_Quickdraw = asset.FindActionMap("Quickdraw", throwIfNotFound: true);
+        m_Quickdraw_Shoot = m_Quickdraw.FindAction("Shoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -619,6 +693,39 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         }
     }
     public WarActions @War => new WarActions(this);
+
+    // Quickdraw
+    private readonly InputActionMap m_Quickdraw;
+    private IQuickdrawActions m_QuickdrawActionsCallbackInterface;
+    private readonly InputAction m_Quickdraw_Shoot;
+    public struct QuickdrawActions
+    {
+        private @PrepScreen m_Wrapper;
+        public QuickdrawActions(@PrepScreen wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Shoot => m_Wrapper.m_Quickdraw_Shoot;
+        public InputActionMap Get() { return m_Wrapper.m_Quickdraw; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(QuickdrawActions set) { return set.Get(); }
+        public void SetCallbacks(IQuickdrawActions instance)
+        {
+            if (m_Wrapper.m_QuickdrawActionsCallbackInterface != null)
+            {
+                @Shoot.started -= m_Wrapper.m_QuickdrawActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_QuickdrawActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_QuickdrawActionsCallbackInterface.OnShoot;
+            }
+            m_Wrapper.m_QuickdrawActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
+            }
+        }
+    }
+    public QuickdrawActions @Quickdraw => new QuickdrawActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -674,5 +781,9 @@ public class @PrepScreen : IInputActionCollection, IDisposable
     public interface IWarActions
     {
         void OnDraw(InputAction.CallbackContext context);
+    }
+    public interface IQuickdrawActions
+    {
+        void OnShoot(InputAction.CallbackContext context);
     }
 }

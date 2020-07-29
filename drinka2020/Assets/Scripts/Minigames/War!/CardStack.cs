@@ -26,6 +26,17 @@ public class CardStack : MonoBehaviour
 
     void Start()
     {
+        if (findPlayer)
+        {
+            if (isLeftPlayer)
+            {
+                player = GameHandler.gameHandler.leftPlayer;
+            }
+            else
+            {
+                player = GameHandler.gameHandler.rightPlayer;
+            }
+        }
         back = Resources.Load<Sprite>("Sprites/Cards/back");
         Card[] cardArr = GetComponentsInChildren<Card>();
         for (int i = 0; i < cardArr.Length; i++)
@@ -63,17 +74,7 @@ public class CardStack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (findPlayer)
-        {
-            if (isLeftPlayer)
-            {
-                player = GameHandler.gameHandler.leftPlayer;
-            }
-            else
-            {
-                player = GameHandler.gameHandler.rightPlayer;
-            }
-        }
+        
         
         if (cards.Count > 0)
         {

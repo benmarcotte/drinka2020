@@ -7,6 +7,7 @@ public class DrinkCounter : MonoBehaviour
 {
     public Player player;
     public int number;
+    public Text text;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +19,13 @@ public class DrinkCounter : MonoBehaviour
         {
             player = GameHandler.gameHandler.rightPlayer;
         }
+        text = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = player.drinks.ToString();
+        text.text = player.drinks.ToString();
     }
+
 }
