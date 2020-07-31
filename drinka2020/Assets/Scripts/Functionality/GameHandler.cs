@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class GameHandler : MonoBehaviour
@@ -19,6 +20,7 @@ public class GameHandler : MonoBehaviour
     public Player winner;
     public int rounds;
 
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -32,6 +34,7 @@ public class GameHandler : MonoBehaviour
         {
             gameHandler = gameObject.GetComponent<GameHandler>();
             DontDestroyOnLoad(gameObject);
+            gameHandler = FindObjectOfType<GameHandler>();
         }   
     }
     void Start()
