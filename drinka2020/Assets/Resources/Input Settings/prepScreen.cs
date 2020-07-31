@@ -49,6 +49,14 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Hold(duration=2.55)""
+                },
+                {
+                    ""name"": ""New Character"",
+                    ""type"": ""Button"",
+                    ""id"": ""14b5d8c0-1025-4f39-826c-66ade5f09eaa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -337,6 +345,28 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                     ""action"": ""BackDone"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""046c0af5-76b1-4b7e-a5cb-57197c86dcaf"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""New Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8aab706f-706e-42e9-bc9c-2c79048f4b1f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""New Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -481,6 +511,232 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Sequences"",
+            ""id"": ""19b23280-69c8-4911-9ceb-7e3f0b19827f"",
+            ""actions"": [
+                {
+                    ""name"": ""South"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fa38ccb-51e0-4e32-9be4-500540701576"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""North"",
+                    ""type"": ""Button"",
+                    ""id"": ""723f57e1-467c-4278-a935-c4e2c3f23b79"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""East"",
+                    ""type"": ""Button"",
+                    ""id"": ""85cff938-6732-4df9-af61-a56c10a81789"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""West"",
+                    ""type"": ""Button"",
+                    ""id"": ""44bc7d19-13fb-4134-b5dd-4fc863b18109"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LB"",
+                    ""type"": ""Button"",
+                    ""id"": ""fb1d9f24-f1b3-4d61-abdb-351aca8dcbbd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RB"",
+                    ""type"": ""Button"",
+                    ""id"": ""7a9bf0b3-d61c-4c8a-8634-f55bdf9fbaeb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b563824e-4ff3-4dad-8956-cdfb144603f6"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""South"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8100d4d1-4d37-4dca-bdb0-5db7ae13cef1"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""South"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0e66ba1-6b0a-4688-8669-abb18b9468db"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""North"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44a97b1d-3a9f-4839-a179-c1636886b9ed"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""North"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""245eb526-e42a-4e7a-97f3-9732b661d067"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""East"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91deadb5-76e7-4a0e-a2d0-e2bc5d6393c8"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""East"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1f0f58e-79d0-4487-b828-56414d4f02e4"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""West"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""392d7652-b931-4d61-9d47-59facfeccb76"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""West"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b3762b4-b69e-44e4-8878-a885234ad6e6"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""LB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6be449fc-fa0e-48bc-a209-e9736f44ddac"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""LB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a3df5aa-637d-461a-97e7-fb8021f632e1"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa84bc0c-2546-4c66-b505-00f41af62e25"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""RB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Tug of War"",
+            ""id"": ""4b8c06c6-18f6-4ff5-ba1c-56658c659568"",
+            ""actions"": [
+                {
+                    ""name"": ""Pull"",
+                    ""type"": ""Button"",
+                    ""id"": ""2cf7ba78-0198-42b1-9304-e3c1b863052f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""24f0d070-71e4-42a0-94db-f086c3489ac4"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pull"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""201f995f-eea4-49f6-9b67-e67d7e38f6f6"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pull"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -552,12 +808,24 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         m_UI_Confirm = m_UI.FindAction("Confirm", throwIfNotFound: true);
         m_UI_Back = m_UI.FindAction("Back", throwIfNotFound: true);
         m_UI_BackDone = m_UI.FindAction("BackDone", throwIfNotFound: true);
+        m_UI_NewCharacter = m_UI.FindAction("New Character", throwIfNotFound: true);
         // War
         m_War = asset.FindActionMap("War", throwIfNotFound: true);
         m_War_Draw = m_War.FindAction("Draw", throwIfNotFound: true);
         // Quickdraw
         m_Quickdraw = asset.FindActionMap("Quickdraw", throwIfNotFound: true);
         m_Quickdraw_Shoot = m_Quickdraw.FindAction("Shoot", throwIfNotFound: true);
+        // Sequences
+        m_Sequences = asset.FindActionMap("Sequences", throwIfNotFound: true);
+        m_Sequences_South = m_Sequences.FindAction("South", throwIfNotFound: true);
+        m_Sequences_North = m_Sequences.FindAction("North", throwIfNotFound: true);
+        m_Sequences_East = m_Sequences.FindAction("East", throwIfNotFound: true);
+        m_Sequences_West = m_Sequences.FindAction("West", throwIfNotFound: true);
+        m_Sequences_LB = m_Sequences.FindAction("LB", throwIfNotFound: true);
+        m_Sequences_RB = m_Sequences.FindAction("RB", throwIfNotFound: true);
+        // Tug of War
+        m_TugofWar = asset.FindActionMap("Tug of War", throwIfNotFound: true);
+        m_TugofWar_Pull = m_TugofWar.FindAction("Pull", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -611,6 +879,7 @@ public class @PrepScreen : IInputActionCollection, IDisposable
     private readonly InputAction m_UI_Confirm;
     private readonly InputAction m_UI_Back;
     private readonly InputAction m_UI_BackDone;
+    private readonly InputAction m_UI_NewCharacter;
     public struct UIActions
     {
         private @PrepScreen m_Wrapper;
@@ -619,6 +888,7 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         public InputAction @Confirm => m_Wrapper.m_UI_Confirm;
         public InputAction @Back => m_Wrapper.m_UI_Back;
         public InputAction @BackDone => m_Wrapper.m_UI_BackDone;
+        public InputAction @NewCharacter => m_Wrapper.m_UI_NewCharacter;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -640,6 +910,9 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                 @BackDone.started -= m_Wrapper.m_UIActionsCallbackInterface.OnBackDone;
                 @BackDone.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnBackDone;
                 @BackDone.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnBackDone;
+                @NewCharacter.started -= m_Wrapper.m_UIActionsCallbackInterface.OnNewCharacter;
+                @NewCharacter.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnNewCharacter;
+                @NewCharacter.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnNewCharacter;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -656,6 +929,9 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                 @BackDone.started += instance.OnBackDone;
                 @BackDone.performed += instance.OnBackDone;
                 @BackDone.canceled += instance.OnBackDone;
+                @NewCharacter.started += instance.OnNewCharacter;
+                @NewCharacter.performed += instance.OnNewCharacter;
+                @NewCharacter.canceled += instance.OnNewCharacter;
             }
         }
     }
@@ -726,6 +1002,112 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         }
     }
     public QuickdrawActions @Quickdraw => new QuickdrawActions(this);
+
+    // Sequences
+    private readonly InputActionMap m_Sequences;
+    private ISequencesActions m_SequencesActionsCallbackInterface;
+    private readonly InputAction m_Sequences_South;
+    private readonly InputAction m_Sequences_North;
+    private readonly InputAction m_Sequences_East;
+    private readonly InputAction m_Sequences_West;
+    private readonly InputAction m_Sequences_LB;
+    private readonly InputAction m_Sequences_RB;
+    public struct SequencesActions
+    {
+        private @PrepScreen m_Wrapper;
+        public SequencesActions(@PrepScreen wrapper) { m_Wrapper = wrapper; }
+        public InputAction @South => m_Wrapper.m_Sequences_South;
+        public InputAction @North => m_Wrapper.m_Sequences_North;
+        public InputAction @East => m_Wrapper.m_Sequences_East;
+        public InputAction @West => m_Wrapper.m_Sequences_West;
+        public InputAction @LB => m_Wrapper.m_Sequences_LB;
+        public InputAction @RB => m_Wrapper.m_Sequences_RB;
+        public InputActionMap Get() { return m_Wrapper.m_Sequences; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SequencesActions set) { return set.Get(); }
+        public void SetCallbacks(ISequencesActions instance)
+        {
+            if (m_Wrapper.m_SequencesActionsCallbackInterface != null)
+            {
+                @South.started -= m_Wrapper.m_SequencesActionsCallbackInterface.OnSouth;
+                @South.performed -= m_Wrapper.m_SequencesActionsCallbackInterface.OnSouth;
+                @South.canceled -= m_Wrapper.m_SequencesActionsCallbackInterface.OnSouth;
+                @North.started -= m_Wrapper.m_SequencesActionsCallbackInterface.OnNorth;
+                @North.performed -= m_Wrapper.m_SequencesActionsCallbackInterface.OnNorth;
+                @North.canceled -= m_Wrapper.m_SequencesActionsCallbackInterface.OnNorth;
+                @East.started -= m_Wrapper.m_SequencesActionsCallbackInterface.OnEast;
+                @East.performed -= m_Wrapper.m_SequencesActionsCallbackInterface.OnEast;
+                @East.canceled -= m_Wrapper.m_SequencesActionsCallbackInterface.OnEast;
+                @West.started -= m_Wrapper.m_SequencesActionsCallbackInterface.OnWest;
+                @West.performed -= m_Wrapper.m_SequencesActionsCallbackInterface.OnWest;
+                @West.canceled -= m_Wrapper.m_SequencesActionsCallbackInterface.OnWest;
+                @LB.started -= m_Wrapper.m_SequencesActionsCallbackInterface.OnLB;
+                @LB.performed -= m_Wrapper.m_SequencesActionsCallbackInterface.OnLB;
+                @LB.canceled -= m_Wrapper.m_SequencesActionsCallbackInterface.OnLB;
+                @RB.started -= m_Wrapper.m_SequencesActionsCallbackInterface.OnRB;
+                @RB.performed -= m_Wrapper.m_SequencesActionsCallbackInterface.OnRB;
+                @RB.canceled -= m_Wrapper.m_SequencesActionsCallbackInterface.OnRB;
+            }
+            m_Wrapper.m_SequencesActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @South.started += instance.OnSouth;
+                @South.performed += instance.OnSouth;
+                @South.canceled += instance.OnSouth;
+                @North.started += instance.OnNorth;
+                @North.performed += instance.OnNorth;
+                @North.canceled += instance.OnNorth;
+                @East.started += instance.OnEast;
+                @East.performed += instance.OnEast;
+                @East.canceled += instance.OnEast;
+                @West.started += instance.OnWest;
+                @West.performed += instance.OnWest;
+                @West.canceled += instance.OnWest;
+                @LB.started += instance.OnLB;
+                @LB.performed += instance.OnLB;
+                @LB.canceled += instance.OnLB;
+                @RB.started += instance.OnRB;
+                @RB.performed += instance.OnRB;
+                @RB.canceled += instance.OnRB;
+            }
+        }
+    }
+    public SequencesActions @Sequences => new SequencesActions(this);
+
+    // Tug of War
+    private readonly InputActionMap m_TugofWar;
+    private ITugofWarActions m_TugofWarActionsCallbackInterface;
+    private readonly InputAction m_TugofWar_Pull;
+    public struct TugofWarActions
+    {
+        private @PrepScreen m_Wrapper;
+        public TugofWarActions(@PrepScreen wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pull => m_Wrapper.m_TugofWar_Pull;
+        public InputActionMap Get() { return m_Wrapper.m_TugofWar; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TugofWarActions set) { return set.Get(); }
+        public void SetCallbacks(ITugofWarActions instance)
+        {
+            if (m_Wrapper.m_TugofWarActionsCallbackInterface != null)
+            {
+                @Pull.started -= m_Wrapper.m_TugofWarActionsCallbackInterface.OnPull;
+                @Pull.performed -= m_Wrapper.m_TugofWarActionsCallbackInterface.OnPull;
+                @Pull.canceled -= m_Wrapper.m_TugofWarActionsCallbackInterface.OnPull;
+            }
+            m_Wrapper.m_TugofWarActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Pull.started += instance.OnPull;
+                @Pull.performed += instance.OnPull;
+                @Pull.canceled += instance.OnPull;
+            }
+        }
+    }
+    public TugofWarActions @TugofWar => new TugofWarActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -777,6 +1159,7 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         void OnConfirm(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
         void OnBackDone(InputAction.CallbackContext context);
+        void OnNewCharacter(InputAction.CallbackContext context);
     }
     public interface IWarActions
     {
@@ -785,5 +1168,18 @@ public class @PrepScreen : IInputActionCollection, IDisposable
     public interface IQuickdrawActions
     {
         void OnShoot(InputAction.CallbackContext context);
+    }
+    public interface ISequencesActions
+    {
+        void OnSouth(InputAction.CallbackContext context);
+        void OnNorth(InputAction.CallbackContext context);
+        void OnEast(InputAction.CallbackContext context);
+        void OnWest(InputAction.CallbackContext context);
+        void OnLB(InputAction.CallbackContext context);
+        void OnRB(InputAction.CallbackContext context);
+    }
+    public interface ITugofWarActions
+    {
+        void OnPull(InputAction.CallbackContext context);
     }
 }

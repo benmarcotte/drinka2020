@@ -10,13 +10,22 @@ public class WinScreenCheck : MonoBehaviour
     [SerializeField] public int playerNumber;
     public Player player;
     public bool confirmed;
-    [SerializeField] public InputActionAsset actions;
+    public Win win;
+    public Image check;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameHandler.gameHandler.players[playerNumber];
+        win = FindObjectOfType<Win>();
+        player = gameObject.GetComponent<Player>();
+        if (player == GameHandler.gameHandler.leftPlayer)
+        {
+            check = win.GetComponentsInChildren<check>()[0].gameObject.GetComponent<Image>();
+        }
+        else
+        {
+            check = win.GetComponentsInChildren<check>()[1].gameObject.GetComponent<Image>();
+        }
         GetComponent<Image>().color = new Color(0, 0, 0, 0);
-        player.GetComponent<PlayerInput>().actions = actions;
     }
 
     // Update is called once per frame
@@ -24,16 +33,19 @@ public class WinScreenCheck : MonoBehaviour
     {
         if (confirmed)
         {
-            GetComponent<Image>().color = player.color;
+            check.color = player.color;
         }
         else
         {
-            GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            check.color = new Color(0, 0, 0, 0);
         }
     }
 
-    void OnSip()
+    public void OnDraw()
     {
-        confirmed = !confirmed;
+        if (win.started)
+        {
+            confirmed = !confirmed;
+        }
     }
 }

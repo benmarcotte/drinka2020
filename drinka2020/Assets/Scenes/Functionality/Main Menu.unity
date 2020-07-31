@@ -488,19 +488,13 @@ MonoBehaviour:
   leftPlayer: {fileID: 0}
   isInOvertime: 0
   minigames:
-  - {fileID: 2082797791}
-  - {fileID: 726303996}
-  - {fileID: 1324091321}
-  - {fileID: 480854381}
-  - {fileID: 1549720449}
-  - {fileID: 1405257257}
-  - {fileID: 176994443}
   - {fileID: 233048707}
   - {fileID: 263698511}
-  - {fileID: 639912310}
-  - {fileID: 348266187}
+  - {fileID: 480854381}
+  - {fileID: 176994443}
   activeMinigame: {fileID: 0}
   winner: {fileID: 0}
+  rounds: 0
 --- !u!224 &264579029
 RectTransform:
   m_ObjectHideFlags: 0
@@ -698,6 +692,7 @@ GameObject:
   - component: {fileID: 344188962}
   - component: {fileID: 344188964}
   - component: {fileID: 344188963}
+  - component: {fileID: 344188965}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -765,6 +760,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344188961}
   m_CullTransparentMesh: 0
+--- !u!114 &344188965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344188961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960ad32c8180abf4f9371ecbd71c3ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &348266184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -965,6 +972,7 @@ GameObject:
   - component: {fileID: 607483243}
   - component: {fileID: 607483242}
   - component: {fileID: 607483241}
+  - component: {fileID: 607483244}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -1083,6 +1091,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607483239}
   m_CullTransparentMesh: 0
+--- !u!114 &607483244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607483239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d442091c0fabb7b428067793fa6da84b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 1037337123}
 --- !u!1001 &639912307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1470,6 +1491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56df44fe0aaaafe4bbad43e5ca1702a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalIntermissionDone: 0
 --- !u!1 &1037337121
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,7 +2123,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 774771616}
-        m_MethodName: toSettingsScene
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

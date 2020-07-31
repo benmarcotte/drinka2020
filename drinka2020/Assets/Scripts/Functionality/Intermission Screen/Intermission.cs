@@ -5,12 +5,10 @@ using UnityEngine.InputSystem;
 
 public class Intermission : MonoBehaviour
 {
-    [SerializeField] InputActionAsset actions;
     // Start is called before the first frame update
     void Start()
     {
-        GameHandler.gameHandler.leftPlayer.GetComponent<PlayerInput>().actions = actions;
-        GameHandler.gameHandler.rightPlayer.GetComponent<PlayerInput>().actions = actions;
     }
+
 
 }

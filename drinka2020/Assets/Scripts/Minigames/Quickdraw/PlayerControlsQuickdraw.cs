@@ -8,6 +8,7 @@ public class PlayerControlsQuickdraw : MonoBehaviour
     public Player player;
     public Image gunImage;
     public Text timerDisplay;
+    public bool timerDisplayed = false;
     
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,11 @@ public class PlayerControlsQuickdraw : MonoBehaviour
             }
             else if (QuickdrawHandler.quickdrawHandler.drawn)
             {
-                timerDisplay.text = QuickdrawHandler.quickdrawHandler.timer.ElapsedMilliseconds.ToString() + "ms";
+                if (!timerDisplayed)
+                {
+                    timerDisplay.text = QuickdrawHandler.quickdrawHandler.timer.ElapsedMilliseconds.ToString() + "ms";
+                    timerDisplayed = true;
+                }
                 if (!QuickdrawHandler.quickdrawHandler.someoneShot)
                 {
                     QuickdrawHandler.quickdrawHandler.someoneShot = true;
