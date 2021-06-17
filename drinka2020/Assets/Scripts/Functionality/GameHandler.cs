@@ -8,7 +8,7 @@ public class GameHandler : MonoBehaviour
 
     public Player[] players;   //all currently initialized players (for tourney mode, can be more than 2)
     public int maxScore;
-    public int sipThreshold;
+    public int sipThreshold = 10;
     public Player rightPlayer; //currently active left or right players
     public Player leftPlayer;
     public bool isInOvertime;
@@ -18,6 +18,7 @@ public class GameHandler : MonoBehaviour
     public static Color[] colors;
     public static string[] colorNames;
     public Player winner;
+    public int rounds;
 
 
     // Start is called before the first frame update
@@ -38,14 +39,15 @@ public class GameHandler : MonoBehaviour
     }
     void Start()
     {
-        colors = new Color[] { new Color(0, 1, 1, 1), new Color(0, 0, 1, 1), new Color(1, 0, 0, 1), new Color(1, 0.92f, 0.016f, 1), new Color(0, 1, 0, 1), new Color(1, 0, 1, 1), new Color(0, 1, 0.5f), new Color(1, 0.6f, 1), new Color(1, 0.5f, 0) };
+        rounds = 0;
+        colors = new Color[] { new Color(0, 1, 1, 1), new Color(0.1f, 0.1f, 1, 1), new Color(1, 0.1f, 0.1f, 1), new Color(1, 0.92f, 0.016f, 1), new Color(0, 1, 0, 1), new Color(1, 0, 1, 1), new Color(0, 1, 0.5f), new Color(1, 0.6f, 1), new Color(1, 0.5f, 0) };
         colorNames = new string[] { "Cyan", "Blue", "Red", "Yellow", "Green", "Magenta", "Teal", "Pink", "Orange" };
     }
 
     public void minigameEnd()
     {
-        checkWin();
-        SceneLoader.toNextScreen();
+        //checkWin();
+        SceneLoader.sceneLoader.toNextScreen();
 
     }
 
@@ -75,10 +77,10 @@ public class GameHandler : MonoBehaviour
         }
     }
 
-    void win(Player player)
+    public void win(Player player)
     {
         winner = player;
-        SceneLoader.toWinScene();
+        SceneLoader.sceneLoader.toWinScene();
     }
 
 

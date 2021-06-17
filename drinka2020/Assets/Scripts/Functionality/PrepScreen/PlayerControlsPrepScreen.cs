@@ -65,6 +65,8 @@ public class PlayerControlsPrepScreen : MonoBehaviour
 
     public void OnConfirm()
     {
+        Debug.Log("trynba confirm");
+
         if (confirmed)
         {
             if(position == -1)
@@ -95,7 +97,13 @@ public class PlayerControlsPrepScreen : MonoBehaviour
 
     public void OnBack()
     {
-        FindObjectOfType<SceneLoader>().toMainMenu();
+        //FindObjectOfType<SceneLoader>().toMainMenu();
+    }
+
+    public void OnNewCharacter()
+    {
+        Debug.Log("new char");
+        gameObject.GetComponent<Player>().initialize();
     }
 
 }

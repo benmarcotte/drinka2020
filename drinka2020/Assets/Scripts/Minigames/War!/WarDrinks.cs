@@ -37,7 +37,13 @@ public class WarDrinks : MonoBehaviour
 
     public void lost()
     {
-        text.text += "Lost! +1\n";
+        text.text += "Lost! +2\n";
+        StartCoroutine(wait());
+    }
+
+    public void lostWar()
+    {
+        text.text += "Lost the war! +5\n";
         StartCoroutine(wait());
     }
 
@@ -56,6 +62,6 @@ public class WarDrinks : MonoBehaviour
     public void lostWar(int count)
     {
         text.text += text.text + "Lost war! +" + count.ToString() + "\n";
-        StartCoroutine(wait());
+        text.text = text.text.Substring(text.text.IndexOf('\n') + 1);
     }
 }

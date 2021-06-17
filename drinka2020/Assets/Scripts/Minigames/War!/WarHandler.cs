@@ -96,16 +96,22 @@ public class WarHandler : MonoBehaviour
             if (wonLeft.cards.Count >= scoreLimit)
             {
                 gameObject.GetComponent<Text>().text = GameHandler.gameHandler.leftPlayer.playerName + " wins the War!";
+                GameHandler.gameHandler.rightPlayer.drinks += 5;
+                rightDrinks.lostWar();
                 yield return new WaitForSeconds(2f);
                 GameHandler.gameHandler.leftPlayer.score++;
                 GameHandler.gameHandler.minigameEnd();
+                break;
             }
             else if (wonRight.cards.Count >= scoreLimit)
             {
                 gameObject.GetComponent<Text>().text = GameHandler.gameHandler.rightPlayer.playerName + " wins the War!";
+                GameHandler.gameHandler.leftPlayer.drinks += 5;
+                leftDrinks.lostWar();
                 yield return new WaitForSeconds(2f);
                 GameHandler.gameHandler.rightPlayer.score++;
                 GameHandler.gameHandler.minigameEnd();
+                break;
             }
 
             //Countdown Handling
@@ -184,14 +190,13 @@ public class WarHandler : MonoBehaviour
                         diff = 0;
                     }
                     rightDrinks.lost();
-                    GameHandler.gameHandler.rightPlayer.drinks++;
+                    GameHandler.gameHandler.rightPlayer.drinks += 2;
                 }
                 else
                 {
                     rightDrinks.bothSuck();
                     GameHandler.gameHandler.rightPlayer.drinks += 3;
                 }
-                GameHandler.gameHandler.rightPlayer.drinks++;
             }
             yield return new WaitForEndOfFrame();
             yield return new WaitForEndOfFrame();
@@ -235,14 +240,13 @@ public class WarHandler : MonoBehaviour
                             diff = 0;
                         }
                         leftDrinks.lost();
-                        GameHandler.gameHandler.leftPlayer.drinks++;
+                        GameHandler.gameHandler.leftPlayer.drinks += 2;
                     }
                     else
                     {
                         leftDrinks.bothSuck();
                         GameHandler.gameHandler.leftPlayer.drinks += 3;
                     }
-                    GameHandler.gameHandler.leftPlayer.drinks++;
                 }
                 else
                 {
@@ -278,14 +282,14 @@ public class WarHandler : MonoBehaviour
                         leftDrinks.lostWar(diff);
                         leftDrinks.lost();
                         GameHandler.gameHandler.leftPlayer.drinks += diff;
-                        GameHandler.gameHandler.leftPlayer.drinks++;
+                        GameHandler.gameHandler.leftPlayer.drinks += 2;
                         atWar = false;
                         diff = 0;
                     }
                     else
                     {
                         leftDrinks.lost();
-                        GameHandler.gameHandler.leftPlayer.drinks++;
+                        GameHandler.gameHandler.leftPlayer.drinks += 2;
                     }
                 }
                 else if (leftInPlay.topCard.value > rightInPlay.topCard.value)
@@ -309,14 +313,14 @@ public class WarHandler : MonoBehaviour
                         rightDrinks.lostWar(diff);
                         rightDrinks.lost();
                         GameHandler.gameHandler.rightPlayer.drinks += diff;
-                        GameHandler.gameHandler.rightPlayer.drinks++;
+                        GameHandler.gameHandler.rightPlayer.drinks += 2;
                         atWar = false;
                         diff = 0;
                     }
                     else
                     {
                         rightDrinks.lost();
-                        GameHandler.gameHandler.rightPlayer.drinks++;
+                        GameHandler.gameHandler.rightPlayer.drinks += 2;
                     }
                 }
                 else

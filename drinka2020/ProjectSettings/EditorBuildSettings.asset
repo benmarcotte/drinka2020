@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Functionality/Next Game.unity
     guid: 242a598d50c5d0d4cb5c147571042f07
   - enabled: 1
+    path: Assets/Scenes/Functionality/Intermission.unity
+    guid: ae5d4ea16f7fd6a47804cd351f2fa1e1
+  - enabled: 1
+    path: Assets/Scenes/Functionality/Win.unity
+    guid: 0448a860958818c44a6aa20ae1271c74
+  - enabled: 1
     path: Assets/Scenes/Minigames/DDR.unity
     guid: 037a11f57135b734a9225b5ef2f35659
   - enabled: 1

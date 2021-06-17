@@ -7,6 +7,8 @@ public class SipCounter : MonoBehaviour
 {
     public Player player;
     [SerializeField] public int playerNumber;
+    public PlayerControlsIntermission controls;
+    public IntermissionCountdown countdown;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,7 @@ public class SipCounter : MonoBehaviour
             player = GameHandler.gameHandler.rightPlayer;
         }
         GetComponent<Text>().color = player.color;
+        controls = player.GetComponent<PlayerControlsIntermission>();
     }
 
     // Update is called once per frame
@@ -27,8 +30,11 @@ public class SipCounter : MonoBehaviour
         GetComponent<Text>().text = player.drinks.ToString();
     }
 
-    public void OnSip()
+    public void OnDraw()
     {
-        player.drinks--;
+        if (countdown.started)
+        {
+            player.drinks--;
+        }
     }
 }

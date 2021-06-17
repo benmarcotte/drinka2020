@@ -20,6 +20,7 @@ public class DrinkCounter : MonoBehaviour
             player = GameHandler.gameHandler.rightPlayer;
         }
         text = GetComponent<Text>();
+        text.color = player.color;
     }
 
     // Update is called once per frame

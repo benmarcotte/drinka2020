@@ -64,7 +64,7 @@ public class QuickdrawHandler : MonoBehaviour
             GameHandler.gameHandler.leftPlayer.drinks += 10;
         }
         status.text = player.playerName + " won the duel!";
-        endDuel();
+        StartCoroutine(endDuel());
     }
 
     public void lostByEarlyShot(Player player)
@@ -93,7 +93,7 @@ public class QuickdrawHandler : MonoBehaviour
 
     IEnumerator endDuel()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         GameHandler.gameHandler.minigameEnd();
     }
 
