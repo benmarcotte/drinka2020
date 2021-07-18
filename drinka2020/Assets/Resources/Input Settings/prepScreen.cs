@@ -737,6 +737,192 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Tic Tac Toe"",
+            ""id"": ""a861c41e-e1c2-4436-951d-edc73e4c7088"",
+            ""actions"": [
+                {
+                    ""name"": ""WASD"",
+                    ""type"": ""Value"",
+                    ""id"": ""c9b6b154-7c80-4974-9eca-d6a3509a0700"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1b3c56f-7b0e-4613-b89e-f60bc1d23e0b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""type"": ""Value"",
+                    ""id"": ""4d6fcfad-f890-4c04-bfa7-d436d9a43d7e"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0e66ebc4-8e0e-447d-8180-b78ee3ec9f4c"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""WASD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e4dcc32-c80c-4358-8867-1f1246744c3e"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""WASD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55726c39-07bd-4645-a6ba-ba1672347a4a"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""WASD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""378ad814-6974-46cb-9561-e7b7191a522a"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""WASD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11137c2b-843a-4795-a4fa-591b70aea499"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""WASD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7be9a4f-0d71-4da8-bcf1-dd0abe2dc0d8"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""WASD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8655b119-5b6c-4616-8488-abac1f78bc86"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""WASD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""65124402-f384-41a2-9a55-87fdd1f60b2a"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WASD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5e9ee2d-e1fc-4294-b940-008d720951e7"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""000d505d-e727-4906-b1b1-f4d36fad29b9"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""373241c1-997b-45ae-94fb-c75945648720"",
+                    ""path"": ""<Joystick>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6971ca51-d7b6-4a06-966b-72543dbe5776"",
+                    ""path"": ""<Joystick>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f4cf5aaf-3694-4c12-92f1-7e929d747f98"",
+                    ""path"": ""<Joystick>/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07670ae2-ef5d-41fc-8e69-9c192a168543"",
+                    ""path"": ""<Joystick>/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -826,6 +1012,11 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         // Tug of War
         m_TugofWar = asset.FindActionMap("Tug of War", throwIfNotFound: true);
         m_TugofWar_Pull = m_TugofWar.FindAction("Pull", throwIfNotFound: true);
+        // Tic Tac Toe
+        m_TicTacToe = asset.FindActionMap("Tic Tac Toe", throwIfNotFound: true);
+        m_TicTacToe_WASD = m_TicTacToe.FindAction("WASD", throwIfNotFound: true);
+        m_TicTacToe_Confirm = m_TicTacToe.FindAction("Confirm", throwIfNotFound: true);
+        m_TicTacToe_Joystick = m_TicTacToe.FindAction("Joystick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1108,6 +1299,55 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         }
     }
     public TugofWarActions @TugofWar => new TugofWarActions(this);
+
+    // Tic Tac Toe
+    private readonly InputActionMap m_TicTacToe;
+    private ITicTacToeActions m_TicTacToeActionsCallbackInterface;
+    private readonly InputAction m_TicTacToe_WASD;
+    private readonly InputAction m_TicTacToe_Confirm;
+    private readonly InputAction m_TicTacToe_Joystick;
+    public struct TicTacToeActions
+    {
+        private @PrepScreen m_Wrapper;
+        public TicTacToeActions(@PrepScreen wrapper) { m_Wrapper = wrapper; }
+        public InputAction @WASD => m_Wrapper.m_TicTacToe_WASD;
+        public InputAction @Confirm => m_Wrapper.m_TicTacToe_Confirm;
+        public InputAction @Joystick => m_Wrapper.m_TicTacToe_Joystick;
+        public InputActionMap Get() { return m_Wrapper.m_TicTacToe; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TicTacToeActions set) { return set.Get(); }
+        public void SetCallbacks(ITicTacToeActions instance)
+        {
+            if (m_Wrapper.m_TicTacToeActionsCallbackInterface != null)
+            {
+                @WASD.started -= m_Wrapper.m_TicTacToeActionsCallbackInterface.OnWASD;
+                @WASD.performed -= m_Wrapper.m_TicTacToeActionsCallbackInterface.OnWASD;
+                @WASD.canceled -= m_Wrapper.m_TicTacToeActionsCallbackInterface.OnWASD;
+                @Confirm.started -= m_Wrapper.m_TicTacToeActionsCallbackInterface.OnConfirm;
+                @Confirm.performed -= m_Wrapper.m_TicTacToeActionsCallbackInterface.OnConfirm;
+                @Confirm.canceled -= m_Wrapper.m_TicTacToeActionsCallbackInterface.OnConfirm;
+                @Joystick.started -= m_Wrapper.m_TicTacToeActionsCallbackInterface.OnJoystick;
+                @Joystick.performed -= m_Wrapper.m_TicTacToeActionsCallbackInterface.OnJoystick;
+                @Joystick.canceled -= m_Wrapper.m_TicTacToeActionsCallbackInterface.OnJoystick;
+            }
+            m_Wrapper.m_TicTacToeActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @WASD.started += instance.OnWASD;
+                @WASD.performed += instance.OnWASD;
+                @WASD.canceled += instance.OnWASD;
+                @Confirm.started += instance.OnConfirm;
+                @Confirm.performed += instance.OnConfirm;
+                @Confirm.canceled += instance.OnConfirm;
+                @Joystick.started += instance.OnJoystick;
+                @Joystick.performed += instance.OnJoystick;
+                @Joystick.canceled += instance.OnJoystick;
+            }
+        }
+    }
+    public TicTacToeActions @TicTacToe => new TicTacToeActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1181,5 +1421,11 @@ public class @PrepScreen : IInputActionCollection, IDisposable
     public interface ITugofWarActions
     {
         void OnPull(InputAction.CallbackContext context);
+    }
+    public interface ITicTacToeActions
+    {
+        void OnWASD(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
+        void OnJoystick(InputAction.CallbackContext context);
     }
 }
