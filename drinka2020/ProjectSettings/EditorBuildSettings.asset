@@ -56,6 +56,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/War.unity
     guid: 6cbf816357283754c8e494bf02f68979
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Tic Tac Toe.unity
+    guid: d32edd87fd45d274bbbb845d4a90eea0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9fe75350e89c0d741898ff1a04c60e60,
       type: 2}
