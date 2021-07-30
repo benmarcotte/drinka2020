@@ -50,7 +50,9 @@ public class GameManager : MonoBehaviour {
 
     //player1 wins
 
-    else if ((player1_choice == (int)options.Paper && player2_choice == (int)options.Rock) || (player1_choice == (int)options.Rock && player2_choice == (int)options.Scissors) || (player1_choice == (int)options.Scissors && player2_choice == (int)options.Paper)) {
+    else if ((player1_choice == (int)options.Paper && player2_choice == (int)options.Rock) || 
+    (player1_choice == (int)options.Rock && player2_choice == (int)options.Scissors) || 
+    (player1_choice == (int)options.Scissors && player2_choice == (int)options.Paper)) {
 
     winner_text.GetComponent<Text>().text= "Player 1 wins!";
     }
