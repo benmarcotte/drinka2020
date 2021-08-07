@@ -737,6 +737,118 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Pong"",
+            ""id"": ""4bfa3601-196f-4404-aff9-c4b42b4e13e7"",
+            ""actions"": [
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""27cf0eb2-fb43-49d7-a8b3-4c21d4b0b6af"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""ed446c23-b291-46ec-944d-6997123407ae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""7b64629a-d6d8-40df-834f-6976640334fc"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3799e348-51fe-482b-ac74-ef01dbcb1edf"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""debf1a01-9d8e-4224-86b5-97ebb2a79625"",
+                    ""path"": ""<Joystick>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""56581f4d-fd75-41dc-99e5-17b9b0aafb07"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""508ffa8c-4efd-485f-a38c-82b73121623d"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dca8f01c-bc76-4253-887f-96a8b34d56f3"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45f25118-d087-49d8-85b7-67257d1553c0"",
+                    ""path"": ""<Joystick>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c66ffd8-0687-4eea-9cec-402370d6cf84"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -826,6 +938,10 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         // Tug of War
         m_TugofWar = asset.FindActionMap("Tug of War", throwIfNotFound: true);
         m_TugofWar_Pull = m_TugofWar.FindAction("Pull", throwIfNotFound: true);
+        // Pong
+        m_Pong = asset.FindActionMap("Pong", throwIfNotFound: true);
+        m_Pong_Up = m_Pong.FindAction("Up", throwIfNotFound: true);
+        m_Pong_Down = m_Pong.FindAction("Down", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1108,6 +1224,47 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         }
     }
     public TugofWarActions @TugofWar => new TugofWarActions(this);
+
+    // Pong
+    private readonly InputActionMap m_Pong;
+    private IPongActions m_PongActionsCallbackInterface;
+    private readonly InputAction m_Pong_Up;
+    private readonly InputAction m_Pong_Down;
+    public struct PongActions
+    {
+        private @PrepScreen m_Wrapper;
+        public PongActions(@PrepScreen wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Up => m_Wrapper.m_Pong_Up;
+        public InputAction @Down => m_Wrapper.m_Pong_Down;
+        public InputActionMap Get() { return m_Wrapper.m_Pong; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PongActions set) { return set.Get(); }
+        public void SetCallbacks(IPongActions instance)
+        {
+            if (m_Wrapper.m_PongActionsCallbackInterface != null)
+            {
+                @Up.started -= m_Wrapper.m_PongActionsCallbackInterface.OnUp;
+                @Up.performed -= m_Wrapper.m_PongActionsCallbackInterface.OnUp;
+                @Up.canceled -= m_Wrapper.m_PongActionsCallbackInterface.OnUp;
+                @Down.started -= m_Wrapper.m_PongActionsCallbackInterface.OnDown;
+                @Down.performed -= m_Wrapper.m_PongActionsCallbackInterface.OnDown;
+                @Down.canceled -= m_Wrapper.m_PongActionsCallbackInterface.OnDown;
+            }
+            m_Wrapper.m_PongActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Up.started += instance.OnUp;
+                @Up.performed += instance.OnUp;
+                @Up.canceled += instance.OnUp;
+                @Down.started += instance.OnDown;
+                @Down.performed += instance.OnDown;
+                @Down.canceled += instance.OnDown;
+            }
+        }
+    }
+    public PongActions @Pong => new PongActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1181,5 +1338,10 @@ public class @PrepScreen : IInputActionCollection, IDisposable
     public interface ITugofWarActions
     {
         void OnPull(InputAction.CallbackContext context);
+    }
+    public interface IPongActions
+    {
+        void OnUp(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
     }
 }

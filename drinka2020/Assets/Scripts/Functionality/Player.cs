@@ -161,5 +161,10 @@ public class Player : MonoBehaviour
             gameObject.AddComponent<PlayerControlsTugOfWar>();
             gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Tug of War");
         }
+        else if (next == SceneManager.GetSceneByName("Pong"))
+        {
+            gameObject.AddComponent<PlayerControlsPong>();
+            gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Pong");
+        }
     }
 }
