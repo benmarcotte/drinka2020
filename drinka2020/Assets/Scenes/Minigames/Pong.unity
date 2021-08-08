@@ -322,7 +322,6 @@ GameObject:
   - component: {fileID: 269769207}
   - component: {fileID: 269769210}
   - component: {fileID: 269769209}
-  - component: {fileID: 269769211}
   - component: {fileID: 269769208}
   m_Layer: 5
   m_Name: Bottom wall
@@ -414,18 +413,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269769206}
   m_CullTransparentMesh: 1
---- !u!114 &269769211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269769206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07283b6487806d459a8b625388cd1db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &322390815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2176,7 +2163,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 5ec2ba439eb58304b82d3ba897310e6a, type: 2}
   m_Interpolate: 1
@@ -3035,7 +3022,6 @@ GameObject:
   - component: {fileID: 2117623708}
   - component: {fileID: 2117623711}
   - component: {fileID: 2117623710}
-  - component: {fileID: 2117623712}
   - component: {fileID: 2117623709}
   m_Layer: 5
   m_Name: Top wall
@@ -3127,18 +3113,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117623707}
   m_CullTransparentMesh: 1
---- !u!114 &2117623712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117623707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07283b6487806d459a8b625388cd1db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2122350297
 PrefabInstance:
   m_ObjectHideFlags: 0

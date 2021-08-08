@@ -10,7 +10,7 @@ public class BallPong : MonoBehaviour
 
     void GoBall() {
         float rand = Random.Range (0, 2);
-        if (rand < 1) {
+        if (rand > 1) {
             rb2d.AddForce (new Vector2 (20, -15));
         } else {
             rb2d.AddForce (new Vector2 (-20, -15));
@@ -22,18 +22,18 @@ public class BallPong : MonoBehaviour
     {
         originalPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
         rb2d = GetComponent<Rigidbody2D> ();
-        rb2d.velocity = Vector2.right * speed;
-        Invoke ("GoBall", 2);
+        rb2d.velocity = Vector2.left * speed;
+        Invoke ("GoBall", 3);
     }
 
     void ResetBall() {
-        rb2d.velocity = Vector2.right * speed;
+        //rb2d.velocity = Vector2.right * speed;
         transform.position = originalPos;
        
     }
     void RestartGame() {
         ResetBall ();
-        Invoke ("GoBall", 1);
+        Invoke ("GoBall", 5);
     }
     void OnCollisionEnter2D(Collision2D coll) {
         if (coll.collider.CompareTag ("Player")) {
