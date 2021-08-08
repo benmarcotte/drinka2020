@@ -9,6 +9,8 @@ public class RPSHandler : MonoBehaviour
     [SerializeField] Hand right;
     [SerializeField] Text status;
     [SerializeField] Sprite rock;
+    [SerializeField] Sprite paper;
+    [SerializeField] Sprite scissors;
     bool leftPicked = false;
     bool rightPicked = false;
     bool resolved = false;
@@ -23,7 +25,21 @@ public class RPSHandler : MonoBehaviour
 
     void resolveGame()
     {
-        
+          //is a draw
+        if ((left.Rock() && right.Rock()) || (left.Paper() && right.Paper()) || (left.Scissors() && right.Scissors())) {
+            status.GetComponent<Text>().text= "Draw! Both gets drinks";
+        }
+
+        //left wins
+        if ( (left.Rock() && right.Scissors()) || (left.Scissors() && right.Paper()) || (left.Paper() && right.Rock())) {
+            status.GetComponent<Text>().text= "Left Wins!";
+        }
+
+        //right wins
+        else {
+            status.GetComponent<Text>().text= "Right Wins!";
+
+        }
     }
 
     // Update is called once per frame
