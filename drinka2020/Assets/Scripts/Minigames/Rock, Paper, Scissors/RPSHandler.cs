@@ -8,9 +8,7 @@ public class RPSHandler : MonoBehaviour
     [SerializeField] Hand left;
     [SerializeField] Hand right;
     [SerializeField] Text status;
-    [SerializeField] Sprite rock;
-    [SerializeField] Sprite paper;
-    [SerializeField] Sprite scissors;
+   
     bool leftPicked = false;
     bool rightPicked = false;
     bool resolved = false;
@@ -25,20 +23,22 @@ public class RPSHandler : MonoBehaviour
 
     void resolveGame()
     {
-          //is a draw
-        if ((left.Rock() && right.Rock()) || (left.Paper() && right.Paper()) || (left.Scissors() && right.Scissors())) {
-            status.GetComponent<Text>().text= "Draw! Both gets drinks";
+         //is a draw
+        if (left.choice_left() == right.choice_right()) {
+            status.GetComponent<Text>().text= "Draw!";
         }
 
         //left wins
-        if ( (left.Rock() && right.Scissors()) || (left.Scissors() && right.Paper()) || (left.Paper() && right.Rock())) {
-            status.GetComponent<Text>().text= "Left Wins!";
+        if(((left.choice_left()=="rock") && (right.choice_right()=="scissors"))  ||
+            ((left.choice_left()=="scissors") && (right.choice_right()=="paper")) ||
+            ((left.choice_left()=="paper") && (right.choice_right()=="rock")))
+        {
+             status.GetComponent<Text>().text= "Left wins!";
         }
 
         //right wins
         else {
-            status.GetComponent<Text>().text= "Right Wins!";
-
+            status.GetComponent<Text>().text= "Right wins!";
         }
     }
 
