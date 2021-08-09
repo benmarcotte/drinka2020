@@ -53,19 +53,19 @@ public class Hand : MonoBehaviour
 
         if(choice==Options.rock)
         {
-            left_img.GetComponent<Image>().sprite=rock;
+            //left_img.GetComponent<Image>().sprite=rock;
             return "rock";
         }
 
         if(choice == Options.paper) 
         {
-            left_img.GetComponent<Image>().sprite=paper;
+            //left_img.GetComponent<Image>().sprite=paper;
             return "paper";
         }
 
         else 
         {
-            left_img.GetComponent<Image>().sprite=scissors;
+            //left_img.GetComponent<Image>().sprite=scissors;
             return "scissors";
         }
 
@@ -75,18 +75,18 @@ public class Hand : MonoBehaviour
 
         if(choice==Options.rock)
         {
-            right_img.GetComponent<Image>().sprite=rock;
+            //right_img.GetComponent<Image>().sprite=rock;
             return "rock";
         }
 
         if(choice == Options.paper) 
         {
-            right_img.GetComponent<Image>().sprite=paper;
+            //right_img.GetComponent<Image>().sprite=paper;
             return "paper";
         }
 
         else {
-            right_img.GetComponent<Image>().sprite=scissors;
+            //right_img.GetComponent<Image>().sprite=scissors;
             return "scissors";
         }
      }
