@@ -724,6 +724,104 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Rock Paper Scissors",
+            "id": "921a32ab-2e30-44f7-b059-88802c5782d6",
+            "actions": [
+                {
+                    "name": "Rock",
+                    "type": "Button",
+                    "id": "909d61a2-6181-42ee-a1e5-235bf468b8dc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Paper",
+                    "type": "Button",
+                    "id": "175b388e-d3d3-4acb-812a-786cf87f92c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Scissors",
+                    "type": "Button",
+                    "id": "5bfeb480-3a44-48a2-841d-c04a9252d396",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a34ef172-c95f-4d34-86c7-039e67a1d81c",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d720d83-f728-4cf3-ba9f-0bcf7344662e",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8c81a40-29a8-4443-8ad3-d7fab7463046",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Paper",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6ecfd42-00b9-4c0c-8072-b38871912ec7",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Paper",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "87e69a74-1e95-46b4-a024-d62892aa2ea8",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scissors",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80f71cb3-97ea-416e-b007-675b8426269d",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scissors",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

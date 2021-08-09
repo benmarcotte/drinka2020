@@ -114,6 +114,10 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject.GetComponent<PlayerControlsTugOfWar>());
         }
+        else if (current == SceneManager.GetSceneByName("Rock, Paper, Scissors"))
+        {
+            Destroy(gameObject.GetComponent<PlayerControlsRockPaperScissors>());
+        }
 
         //Everything above destroys current controller component
         //Everything under adds its own controller component
@@ -160,6 +164,11 @@ public class Player : MonoBehaviour
         {
             gameObject.AddComponent<PlayerControlsTugOfWar>();
             gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Tug of War");
+        }
+        else if (next == SceneManager.GetSceneByName("Rock, Paper, Scissors"))
+        {
+            gameObject.AddComponent<PlayerControlsRockPaperScissors>();
+            gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Rock Paper Scissors");
         }
     }
 }
