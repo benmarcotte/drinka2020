@@ -11,11 +11,11 @@ public class PlayerControlsRockPaperScissors : MonoBehaviour
     {
         if(gameObject.GetComponent<Player>() == GameHandler.gameHandler.leftPlayer)
         {
-            hand = FindObjectsOfType<Hand>()[0];
+            hand = FindObjectsOfType<Hand>()[1];
         }
         else
         {
-            hand = FindObjectsOfType<Hand>()[1];
+            hand = FindObjectsOfType<Hand>()[0];
         }
     }
     void OnRock()
