@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Left
+  - Right
+  - Left Player
+  - Right Player
   layers:
   - Default
   - TransparentFX

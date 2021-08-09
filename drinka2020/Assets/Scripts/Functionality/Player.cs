@@ -114,6 +114,10 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject.GetComponent<PlayerControlsTugOfWar>());
         }
+        else if (next == SceneManager.GetSceneByName("Pong"))
+        {
+            Destroy(gameObject.AddComponent<PlayerControlsPong>());
+        }
 
         //Everything above destroys current controller component
         //Everything under adds its own controller component

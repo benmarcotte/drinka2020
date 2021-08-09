@@ -6,36 +6,54 @@ using UnityEngine.UI;
 public class PongDrinks : MonoBehaviour
 {
     public Text text;
+    public Player side;
     
     // Start is called before the first frame update
     void Start()
     {
         text = gameObject.GetComponent<Text>();
+        if(gameObject.tag.Equals("Left"))
+        {
+            side = GameHandler.gameHandler.leftPlayer;
+        }
+        else
+        {
+            side = GameHandler.gameHandler.rightPlayer;
+        }
     }
-    
-    public void timePassed()
+
+    public void tying()
     {
-        text.text += "Surviving! +1\n";
+        text.text += "Tied! +1\n";
+        side.drinks += 1;
         StartCoroutine(wait());
     }
 
-    public void tooSlow()
+    public void losing()
     {
-        text.text += "Too slow! +3\n";
+        text.text += "Losing! +2\n";
+        side.drinks += 2;
+        StartCoroutine(wait());
     }
 
-    public void soClose()
+    public void lostRound()
     {
-        text.text += "So close! +5\n";
+        text.text += "Lost the round! +3\n";
+        side.drinks += 3;
+        StartCoroutine(wait());
     }
 
-    public void tied()
+    public void Pong()
     {
-        text.text = "Tied! +10\n";
+        text.text += "Pong +1\n";
+        side.drinks += 1;
+        StartCoroutine(wait());
     }
-    public void lost()
+
+    public void lostMatch()
     {
-        text.text += "You lost! +15\n";
+        text.text += "Lost the match! +5\n";
+        side.drinks += 5;
     }
 
     IEnumerator wait()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,65 +9,99 @@ public class PongHandler : MonoBehaviour
     public Image leftPaddle;
     public Image rightPaddle;
     public Image ball;
-    public CountdownPong countdown;
+    [SerializeField] public BallPong gameBall;
     public int leftScore = 0;
     public int rightScore = 0;
-    public PongDrinks leftDrinks;
-    public PongDrinks rightDrinks;
+    [SerializeField] public PongDrinks leftDrinks;
+    [SerializeField] public PongDrinks rightDrinks;
     public static PongHandler pongHandler;
     public bool winnerDeclared = false;
-    
+    [SerializeField] Text leftScoreText;
+    [SerializeField] Text rightScoreText;
+
     void Start()
     {
         pongHandler = gameObject.GetComponent<PongHandler>();
         leftPaddle.color = GameHandler.gameHandler.leftPlayer.color;
         rightPaddle.color = GameHandler.gameHandler.rightPlayer.color;
+        //drinks();
     }
 
     public static void Score(string wallID)
     {
-        if (wallID == "Right wall")
+        if (wallID.Equals("Right wall"))
         {
             pongHandler.leftScore++;
+            pongHandler.rightDrinks.lostRound();
+            if(pongHandler.leftScore >= 3)
+            {
+                pongHandler.rightDrinks.lostMatch();
+                pongHandler.declareWinner('L');
+            }
         }
         else
         {
             pongHandler.rightScore++;
-        }
+            pongHandler.leftDrinks.lostRound();
+            if (pongHandler.rightScore >= 3)
+            {
+                pongHandler.leftDrinks.lostMatch();
+                pongHandler.declareWinner('R');
+            }
+        }       
     }
 
-    public IEnumerator drinks()
+    private void declareWinner(char v)
     {
-        while (countdown.started)
+        if(v == 'L')
         {
-            if (leftScore == rightScore)
-            {
-                leftDrinks.timePassed();
-                rightDrinks.timePassed();
-                GameHandler.gameHandler.leftPlayer.drinks++;
-                GameHandler.gameHandler.rightPlayer.drinks++;
-            }
-            else if (leftScore > rightScore)
-            {
-                rightDrinks.soClose();
-                leftDrinks.timePassed();
-                GameHandler.gameHandler.rightPlayer.drinks += 2;
-                GameHandler.gameHandler.leftPlayer.drinks++;
-            }
-            else if (rightScore > leftScore)
-            {
-                leftDrinks.soClose();
-                rightDrinks.timePassed();
-                GameHandler.gameHandler.leftPlayer.drinks += 2;
-                GameHandler.gameHandler.rightPlayer.drinks++;
-            }
-            yield return new WaitForSeconds(1.5f);
+            gameObject.GetComponent<Text>().text = "PONG\n" + GameHandler.gameHandler.leftPlayer.name + " won!";
+        } 
+        else
+        {
+            gameObject.GetComponent<Text>().text = "PONG\n" + GameHandler.gameHandler.rightPlayer.name + " won!";
         }
+        Destroy(gameBall.gameObject);
+        Invoke("minigameEnd", 3f);
     }
+
+    public void minigameEnd()
+    {
+        GameHandler.gameHandler.minigameEnd();
+    }
+
+    //public IEnumerator drinks()
+    //{
+    //    while (true)
+    //    { 
+    //        while (gameBall.inPlay)
+    //        {
+    //            if (leftScore == rightScore)
+    //            {
+    //                leftDrinks.tying();
+    //                rightDrinks.tying();
+    //                GameHandler.gameHandler.leftPlayer.drinks++;
+    //                GameHandler.gameHandler.rightPlayer.drinks++;
+    //            }
+    //            else if (leftScore > rightScore)
+    //            {
+    //                rightDrinks.losing();
+    //                GameHandler.gameHandler.rightPlayer.drinks += 1;
+    //            }
+    //            else if (rightScore > leftScore)
+    //            {
+    //                leftDrinks.losing();
+    //                GameHandler.gameHandler.leftPlayer.drinks += 1;
+    //            }
+    //            yield return new WaitForSeconds(2f);
+    //        }
+    //    }
+    //}
 
     void Update()
     {
-        
+        leftScoreText.text = leftScore.ToString();
+        rightScoreText.text = rightScore.ToString();
     }
 
 
