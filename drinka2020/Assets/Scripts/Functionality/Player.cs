@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public string character;
     public string[] characters = { "Mace", "Whip", "Gottem" };
     public int characterInt;
+    
 
     //implement controller assignment
 
@@ -118,6 +119,10 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject.GetComponent<PlayerControlsRockPaperScissors>());
         }
+        else if (next == SceneManager.GetSceneByName("Pong"))
+        {
+            Destroy(gameObject.AddComponent<PlayerControlsPong>());
+        }
 
         //Everything above destroys current controller component
         //Everything under adds its own controller component
@@ -169,6 +174,11 @@ public class Player : MonoBehaviour
         {
             gameObject.AddComponent<PlayerControlsRockPaperScissors>();
             gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Rock Paper Scissors");
+        }
+        else if (next == SceneManager.GetSceneByName("Pong"))
+        {
+            gameObject.AddComponent<PlayerControlsPong>();
+            gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Pong");
         }
     }
 }

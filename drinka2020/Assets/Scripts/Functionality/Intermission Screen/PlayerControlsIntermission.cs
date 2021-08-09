@@ -10,6 +10,7 @@ public class PlayerControlsIntermission : MonoBehaviour
     void Start()
     {
         countdown = FindObjectOfType<IntermissionCountdown>();
+        player = gameObject.GetComponent<Player>();
     }
 
     // Update is called once per frame

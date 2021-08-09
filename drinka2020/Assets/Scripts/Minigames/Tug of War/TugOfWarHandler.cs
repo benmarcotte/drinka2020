@@ -40,25 +40,16 @@ public class TugOfWarHandler : MonoBehaviour
         while (countdown.started)
         {
             Debug.Log(ropePos);
-            if(ropePos < 120 && ropePos > -120)
-            {
-                leftDrinks.timePassed();
-                rightDrinks.timePassed();
-                GameHandler.gameHandler.leftPlayer.drinks++;
-                GameHandler.gameHandler.rightPlayer.drinks++;
-            }
-            else if (ropePos > 120)
+            if (ropePos > 120)
             {
                 leftDrinks.inDanger();
-                rightDrinks.timePassed();
-                GameHandler.gameHandler.leftPlayer.drinks += 2;
+                GameHandler.gameHandler.leftPlayer.drinks += 1;
                 GameHandler.gameHandler.rightPlayer.drinks++;
             }
             else if (ropePos < -120)
             {
                 rightDrinks.inDanger();
-                leftDrinks.timePassed();
-                GameHandler.gameHandler.rightPlayer.drinks += 2;
+                GameHandler.gameHandler.rightPlayer.drinks += 1;
                 GameHandler.gameHandler.leftPlayer.drinks++;
             }
             yield return new WaitForSeconds(1.5f);
@@ -72,10 +63,10 @@ public class TugOfWarHandler : MonoBehaviour
             if (side == 'l')
             {
                 leftPulls++;
-                if(leftPulls % 10 == 0)
+                if(leftPulls % 5 == 0)
                 {
                     rightDrinks.gettingPulled();
-                    GameHandler.gameHandler.rightPlayer.drinks++;
+                    GameHandler.gameHandler.rightPlayer.drinks+=2;
                 }
                 ropePos -= 10;
                 if (ropePos > 120)
@@ -86,10 +77,10 @@ public class TugOfWarHandler : MonoBehaviour
             else
             {
                 rightPulls++;
-                if (rightPulls % 10 == 0)
+                if (rightPulls % 5 == 0)
                 {
                     leftDrinks.gettingPulled();
-                    GameHandler.gameHandler.leftPlayer.drinks++;
+                    GameHandler.gameHandler.leftPlayer.drinks+=2;
                 }
                 ropePos += 10;
                 if (ropePos < -120)
@@ -117,7 +108,7 @@ public class TugOfWarHandler : MonoBehaviour
                 countdown.started = false;
                 gameObject.GetComponent<Text>().text = GameHandler.gameHandler.rightPlayer.playerName + " won the Tug of War!";
                 leftDrinks.lostTugOfWar();
-                GameHandler.gameHandler.leftPlayer.drinks += 10;
+                GameHandler.gameHandler.leftPlayer.drinks += 5;
                 leftImage.sprite = lost;
                 rightImage.sprite = victory;
                 winnerDeclared = true;
@@ -131,7 +122,7 @@ public class TugOfWarHandler : MonoBehaviour
                 countdown.started = false;
                 gameObject.GetComponent<Text>().text = GameHandler.gameHandler.leftPlayer.playerName + " won the Tug of War!";
                 rightDrinks.lostTugOfWar();
-                GameHandler.gameHandler.rightPlayer.drinks += 10;
+                GameHandler.gameHandler.rightPlayer.drinks += 5;
                 rightImage.sprite = lost;
                 leftImage.sprite = victory;
                 winnerDeclared = true;
