@@ -493,6 +493,9 @@ MonoBehaviour:
   isInOvertime: 0
   minigames:
   - {fileID: 1987894951}
+  - {fileID: 480854381}
+  - {fileID: 176994443}
+  - {fileID: 263698511}
   activeMinigame: {fileID: 0}
   winner: {fileID: 0}
   rounds: 0

@@ -62,13 +62,13 @@ public class CountdownTugOfWar : MonoBehaviour
                 if (TugOfWarHandler.tugOfWarHandler.ropePos > 0)
                 {
                     TugOfWarHandler.tugOfWarHandler.gameObject.GetComponent<Text>().text = GameHandler.gameHandler.rightPlayer.playerName + " won the Tug of War!";
-                    GameHandler.gameHandler.leftPlayer.drinks += 5;
+                    GameHandler.gameHandler.leftPlayer.drinks += 3;
                     TugOfWarHandler.tugOfWarHandler.leftDrinks.lostByTimeout();
                 }
                 else if (TugOfWarHandler.tugOfWarHandler.ropePos < 0)
                 {
                     TugOfWarHandler.tugOfWarHandler.gameObject.GetComponent<Text>().text = GameHandler.gameHandler.leftPlayer.playerName + " won the Tug of War!";
-                    GameHandler.gameHandler.rightPlayer.drinks += 5;
+                    GameHandler.gameHandler.rightPlayer.drinks += 3;
                     TugOfWarHandler.tugOfWarHandler.rightDrinks.lostByTimeout();
                 }
                 else if (TugOfWarHandler.tugOfWarHandler.ropePos == 0)

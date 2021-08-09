@@ -748,7 +748,7 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                     ""id"": ""27cf0eb2-fb43-49d7-a8b3-4c21d4b0b6af"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""Down"",
@@ -756,7 +756,23 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                     ""id"": ""ed446c23-b291-46ec-944d-6997123407ae"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""UpRelease"",
+                    ""type"": ""Button"",
+                    ""id"": ""a17403a8-46e9-4bee-a371-c39261e290df"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""Invert"",
+                    ""interactions"": ""Press(behavior=1)""
+                },
+                {
+                    ""name"": ""DownRelease"",
+                    ""type"": ""Button"",
+                    ""id"": ""83b869ad-97cd-4d4d-92f3-9d3f1a6c11a5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""Invert"",
+                    ""interactions"": ""Press(behavior=1)""
                 }
             ],
             ""bindings"": [
@@ -806,11 +822,11 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""60ffda63-846c-403d-9269-c45063d6b488"",
+                    ""id"": ""16901d58-c4bc-4f64-abfb-e2e5abc6c2fe"",
                     ""path"": ""<Gamepad>/Dpad/Up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""Up"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -861,12 +877,89 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""031dbd15-09ad-408e-abef-1eda438e63a2"",
+                    ""id"": ""e6ee947b-ccf6-4377-9176-06cd97a23355"",
                     ""path"": ""<Gamepad>/Dpad/Down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a766ede-07a2-4a75-a914-6c4313bf78ca"",
+                    ""path"": ""<Keyboard>/W"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UpRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96511f95-2c9f-4532-b382-8bfed1355c7f"",
+                    ""path"": ""<Keyboard>/UpArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UpRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c6696df8-f5ab-4af6-833a-6e5efdc09d6a"",
+                    ""path"": ""<Gamepad>/dpad/Up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UpRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""tempName"",
+                    ""id"": ""11ad365b-b745-4616-9667-b9254a1f1db9"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": """",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3526b931-5f4f-4744-a8b1-9cc2cb7b5c5e"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DownRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c73612a-7834-42ce-acf2-a90ea1aa6897"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DownRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""49cb2449-c438-4222-8509-2ec55058b82d"",
+                    ""path"": ""<Keyboard>/DownArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DownRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -964,6 +1057,8 @@ public class @PrepScreen : IInputActionCollection, IDisposable
         m_Pong = asset.FindActionMap("Pong", throwIfNotFound: true);
         m_Pong_Up = m_Pong.FindAction("Up", throwIfNotFound: true);
         m_Pong_Down = m_Pong.FindAction("Down", throwIfNotFound: true);
+        m_Pong_UpRelease = m_Pong.FindAction("UpRelease", throwIfNotFound: true);
+        m_Pong_DownRelease = m_Pong.FindAction("DownRelease", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1252,12 +1347,16 @@ public class @PrepScreen : IInputActionCollection, IDisposable
     private IPongActions m_PongActionsCallbackInterface;
     private readonly InputAction m_Pong_Up;
     private readonly InputAction m_Pong_Down;
+    private readonly InputAction m_Pong_UpRelease;
+    private readonly InputAction m_Pong_DownRelease;
     public struct PongActions
     {
         private @PrepScreen m_Wrapper;
         public PongActions(@PrepScreen wrapper) { m_Wrapper = wrapper; }
         public InputAction @Up => m_Wrapper.m_Pong_Up;
         public InputAction @Down => m_Wrapper.m_Pong_Down;
+        public InputAction @UpRelease => m_Wrapper.m_Pong_UpRelease;
+        public InputAction @DownRelease => m_Wrapper.m_Pong_DownRelease;
         public InputActionMap Get() { return m_Wrapper.m_Pong; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1273,6 +1372,12 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                 @Down.started -= m_Wrapper.m_PongActionsCallbackInterface.OnDown;
                 @Down.performed -= m_Wrapper.m_PongActionsCallbackInterface.OnDown;
                 @Down.canceled -= m_Wrapper.m_PongActionsCallbackInterface.OnDown;
+                @UpRelease.started -= m_Wrapper.m_PongActionsCallbackInterface.OnUpRelease;
+                @UpRelease.performed -= m_Wrapper.m_PongActionsCallbackInterface.OnUpRelease;
+                @UpRelease.canceled -= m_Wrapper.m_PongActionsCallbackInterface.OnUpRelease;
+                @DownRelease.started -= m_Wrapper.m_PongActionsCallbackInterface.OnDownRelease;
+                @DownRelease.performed -= m_Wrapper.m_PongActionsCallbackInterface.OnDownRelease;
+                @DownRelease.canceled -= m_Wrapper.m_PongActionsCallbackInterface.OnDownRelease;
             }
             m_Wrapper.m_PongActionsCallbackInterface = instance;
             if (instance != null)
@@ -1283,6 +1388,12 @@ public class @PrepScreen : IInputActionCollection, IDisposable
                 @Down.started += instance.OnDown;
                 @Down.performed += instance.OnDown;
                 @Down.canceled += instance.OnDown;
+                @UpRelease.started += instance.OnUpRelease;
+                @UpRelease.performed += instance.OnUpRelease;
+                @UpRelease.canceled += instance.OnUpRelease;
+                @DownRelease.started += instance.OnDownRelease;
+                @DownRelease.performed += instance.OnDownRelease;
+                @DownRelease.canceled += instance.OnDownRelease;
             }
         }
     }
@@ -1365,5 +1476,7 @@ public class @PrepScreen : IInputActionCollection, IDisposable
     {
         void OnUp(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
+        void OnUpRelease(InputAction.CallbackContext context);
+        void OnDownRelease(InputAction.CallbackContext context);
     }
 }

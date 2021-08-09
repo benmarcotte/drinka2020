@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public string character;
     public string[] characters = { "Mace", "Whip", "Gottem" };
     public int characterInt;
+    
 
     //implement controller assignment
 

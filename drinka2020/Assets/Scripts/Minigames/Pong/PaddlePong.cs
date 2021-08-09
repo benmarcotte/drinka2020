@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,26 @@ public class PaddlePong : MonoBehaviour
     public bool pressedUp = false;
     public bool pressedDown = false;
 
+    public void UpStart()
+    {
+        rb2d.velocity = new Vector2(rb2d.velocity.x, speed);
+    }
+
+    public void DownStart()
+    {
+        rb2d.velocity = new Vector2(rb2d.velocity.x, -speed);
+    }
+
+    public void UpStop()
+    {
+        rb2d.velocity = Vector2.zero;
+    }
+
+    public void DownStop()
+    {
+        rb2d.velocity = Vector2.zero;
+    }
+
     // Use this for initialization
     void Start () {
         boundTop = topWall.position.y;
@@ -26,48 +47,52 @@ public class PaddlePong : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D> ();
     }
 
-    public void Up(InputAction.CallbackContext obj)
-    {
-        var vel = rb2d.velocity;
-        if (obj.started)
-        {
-            vel.y = speed;
-        }
-        if (obj.canceled)
-        {
-            vel = new Vector2(0, 0);
-        }
-    }
-    public void Down(InputAction.CallbackContext obj)
-    {
-        var vel = rb2d.velocity;
-        if (obj.started)
-        {
-            vel.y = -speed;
-        }
-        if (obj.canceled)
-        {
-            vel = new Vector2(0, 0);
-        }
-    }
+
+
+    //public void Up(InputAction.CallbackContext obj)
+    //{
+    //    var vel = rb2d.velocity;
+    //    if (obj.started)
+    //    {
+    //        vel.y = speed;
+    //    }
+    //    if (obj.canceled)
+    //    {
+    //        vel = new Vector2(0, 0);
+    //    }
+    //    rb2d.velocity = vel;
+    //}
+    //public void Down(InputAction.CallbackContext obj)
+    //{
+    //    var vel = rb2d.velocity;
+    //    if (obj.started)
+    //    {
+    //        vel.y = -speed;
+    //    }
+    //    if (obj.canceled)
+    //    {
+    //        vel = new Vector2(0, 0);
+    //    }
+    //    rb2d.velocity = vel;
+    //}
 
 
     private void FixedUpdate()
     {
-        var vel = rb2d.velocity;
-        if (pressedUp)
-        {
-            vel.y = speed;
-        }
-        else if (pressedDown)
-        {
-            vel.y = -speed;
-        }
-        else 
-        {
-            vel = new Vector2(0, 0);
-        }
-        rb2d.velocity = vel;
+        //var vel = rb2d.velocity;
+        //if (pressedUp)
+        //{
+        //    vel.y = speed;
+        //}
+        //else if (pressedDown)
+        //{
+        //    vel.y = -speed;
+        //}
+        //else 
+        //{
+        //    vel = new Vector2(0, 0);
+        //}
+        //rb2d.velocity = vel;
     }
 
     // Update is called once per frame
@@ -83,10 +108,10 @@ public class PaddlePong : MonoBehaviour
         //rb2d.velocity = vel;
 
         var pos = transform.position;
-        if (pos.y > boundTop) {
-            pos.y = boundTop;
-        } else if (pos.y < boundBottom) {
-            pos.y = boundBottom;
+        if (pos.y > boundTop - 35) {
+            pos.y = boundTop - 35;
+        } else if (pos.y < boundBottom + 35) {
+            pos.y = boundBottom + 35;
         }
         transform.position = pos;
     }

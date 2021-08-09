@@ -19,7 +19,7 @@ public class TugOfWarDrinks : MonoBehaviour
 
     public void gettingPulled()
     {
-        text.text += "Getting pulled! +1\n";
+        text.text += "Getting pulled! +2\n";
         StartCoroutine(wait());
     }
 
@@ -30,17 +30,17 @@ public class TugOfWarDrinks : MonoBehaviour
 
     public void lostTugOfWar()
     {
-        text.text = "Lost Tug of War! +10\n";
+        text.text = "Lost Tug of War! +5\n";
     }
 
     public void lostByTimeout()
     {
-        text.text = "Lost Tug of War by timeout! +5\n";
+        text.text = "Lost Tug of War by timeout! +3\n";
     }
 
     public void inDanger()
     {
-        text.text += "In danger! +2\n";
+        text.text += "In danger! +1\n";
         StartCoroutine(wait());
     }
 

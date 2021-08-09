@@ -20,21 +20,32 @@ public class PlayerControlsPong : MonoBehaviour
         }
     }
 
-    void OnUp(InputAction.CallbackContext obj)
+    void OnUp()
     {
-        paddle.Up(obj);
+        //paddle.Up(obj);
+        paddle.UpStart();
         //paddle.pressedUp = !paddle.pressedUp;
     }
 
-    void OnDown(InputAction.CallbackContext obj)
+    void OnDown()
     {
-        paddle.Down(obj);
-        //paddle.pressedDown = !paddle.pressedUp;
+        paddle.DownStart();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnUpRelease()
     {
-        
+        paddle.UpStop();
+    }
+
+    void OnDownRelease()
+    {
+        //paddle.Down(obj);
+        paddle.DownStop();
+        //    //paddle.pressedDown = !paddle.pressedUp;
+    }
+
+        // Update is called once per frame
+        void Update()
+    {
     }
 }

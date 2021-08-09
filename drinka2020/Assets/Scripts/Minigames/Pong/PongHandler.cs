@@ -55,11 +55,11 @@ public class PongHandler : MonoBehaviour
     {
         if(v == 'L')
         {
-            gameObject.GetComponent<Text>().text = "PONG\n" + GameHandler.gameHandler.leftPlayer.name + " won!";
+            gameObject.GetComponent<Text>().text = "PONG\n" + GameHandler.gameHandler.leftPlayer.playerName + " wins!";
         } 
         else
         {
-            gameObject.GetComponent<Text>().text = "PONG\n" + GameHandler.gameHandler.rightPlayer.name + " won!";
+            gameObject.GetComponent<Text>().text = "PONG\n" + GameHandler.gameHandler.rightPlayer.playerName + " wins!";
         }
         Destroy(gameBall.gameObject);
         Invoke("minigameEnd", 3f);
