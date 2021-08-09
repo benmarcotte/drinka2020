@@ -10,6 +10,13 @@ public class Hand : MonoBehaviour
     enum Options { rock, paper, scissors }
     Options choice; 
     
+    [SerializeField] Sprite rock;
+    [SerializeField] Sprite paper;
+    [SerializeField] Sprite scissors;
+
+    [SerializeField] Sprite left_img;
+    [SerializeField] Sprite right_img;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +47,49 @@ public class Hand : MonoBehaviour
         choice = Options.scissors;
         chosen = true;
     }
+    
+    //methods to compare in the rpshandler class
+    public string choice_left() {
+
+        if(choice==Options.rock)
+        {
+            left_img.GetComponent<Image>().sprite=rock;
+            return "rock";
+        }
+
+        if(choice == Options.paper) 
+        {
+            left_img.GetComponent<Image>().sprite=paper;
+            return "paper";
+        }
+
+        else 
+        {
+            left_img.GetComponent<Image>().sprite=scissors;
+            return "scissors";
+        }
+
+    }
+
+     public string choice_right() {
+
+        if(choice==Options.rock)
+        {
+            right_img.GetComponent<Image>().sprite=rock;
+            return "rock";
+        }
+
+        if(choice == Options.paper) 
+        {
+            right_img.GetComponent<Image>().sprite=paper;
+            return "paper";
+        }
+
+        else {
+            right_img.GetComponent<Image>().sprite=scissors;
+            return "scissors";
+        }
+     }
 
     // Update is called once per frame
 
