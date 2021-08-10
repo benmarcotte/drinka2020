@@ -515,7 +515,7 @@ MonoBehaviour:
   rock: {fileID: 21300000, guid: dd71021856f285c47b183268b7248821, type: 3}
   paper: {fileID: 21300000, guid: cc33eff067e22014787645ce60ed817e, type: 3}
   scissors: {fileID: 21300000, guid: 95ec086b6e6714241965a65092533b58, type: 3}
-  none: {fileID: 0}
+  none: {fileID: 21300000, guid: 52a4baa0bafb5ee48ae9eb25d4e893d5, type: 3}
   img: {fileID: 126013718}
 --- !u!114 &126013718
 MonoBehaviour:
@@ -2830,7 +2830,7 @@ MonoBehaviour:
   rock: {fileID: 21300000, guid: dd71021856f285c47b183268b7248821, type: 3}
   paper: {fileID: 21300000, guid: cc33eff067e22014787645ce60ed817e, type: 3}
   scissors: {fileID: 21300000, guid: 95ec086b6e6714241965a65092533b58, type: 3}
-  none: {fileID: 0}
+  none: {fileID: 21300000, guid: 52a4baa0bafb5ee48ae9eb25d4e893d5, type: 3}
   img: {fileID: 1554232251}
 --- !u!114 &1554232251
 MonoBehaviour:
