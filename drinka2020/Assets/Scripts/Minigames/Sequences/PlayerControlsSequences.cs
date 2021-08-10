@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControlsSequences : MonoBehaviour
+public class PlayerControlsSequences : MonoBehaviour, IPlayerControls
 {
     public SequencesPanel panel;
 

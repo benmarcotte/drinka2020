@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PongHandler : MonoBehaviour
+public class PongHandler : MonoBehaviour, IHandler
 {
     public Image leftPaddle;
     public Image rightPaddle;
@@ -18,6 +18,7 @@ public class PongHandler : MonoBehaviour
     public bool winnerDeclared = false;
     [SerializeField] Text leftScoreText;
     [SerializeField] Text rightScoreText;
+
 
     void Start()
     {

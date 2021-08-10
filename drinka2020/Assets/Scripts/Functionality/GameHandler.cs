@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class GameHandler : MonoBehaviour
+public class GameHandler : MonoBehaviour, IHandler
 {
 
     public Player[] players;   //all currently initialized players (for tourney mode, can be more than 2)

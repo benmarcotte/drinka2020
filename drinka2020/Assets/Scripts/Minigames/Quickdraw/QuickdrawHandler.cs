@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QuickdrawHandler : MonoBehaviour
+public class QuickdrawHandler : MonoBehaviour, IHandler
 {
     public TextMeshProUGUI drawText;
     public bool drawn = false;

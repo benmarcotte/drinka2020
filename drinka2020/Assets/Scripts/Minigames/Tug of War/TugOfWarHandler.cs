@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TugOfWarHandler : MonoBehaviour
+public class TugOfWarHandler : MonoBehaviour, IHandler
 {
     public Image leftImage;
     public Image rightImage;

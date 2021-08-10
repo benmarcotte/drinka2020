@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RPSHandler : MonoBehaviour
+public class RPSHandler : MonoBehaviour, IHandler
 {
     [SerializeField] public Hand left;
     [SerializeField] DrinksRPS leftDrinks;

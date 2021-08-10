@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerControlsQuickdraw : MonoBehaviour
+public class PlayerControlsQuickdraw : MonoBehaviour, IPlayerControls
 {
     public Player player;
     public Image gunImage;

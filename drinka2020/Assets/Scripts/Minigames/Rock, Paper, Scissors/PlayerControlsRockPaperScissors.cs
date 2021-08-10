@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControlsRockPaperScissors : MonoBehaviour
+public class PlayerControlsRockPaperScissors : MonoBehaviour, IPlayerControls
 {
     Hand hand;
     // Start is called before the first frame update

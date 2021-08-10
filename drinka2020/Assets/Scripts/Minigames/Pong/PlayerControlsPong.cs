@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControlsPong : MonoBehaviour
+public class PlayerControlsPong : MonoBehaviour, IPlayerControls
 {
     public PaddlePong paddle;
     
@@ -45,7 +45,8 @@ public class PlayerControlsPong : MonoBehaviour
     }
 
         // Update is called once per frame
-        void Update()
+    void Update()
     {
+
     }
 }

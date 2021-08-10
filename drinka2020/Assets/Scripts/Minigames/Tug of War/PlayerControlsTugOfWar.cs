@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControlsTugOfWar : MonoBehaviour
+public class PlayerControlsTugOfWar : MonoBehaviour, IPlayerControls
 {
     public Player player;
     public char side;
