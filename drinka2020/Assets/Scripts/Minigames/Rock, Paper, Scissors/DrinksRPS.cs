@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,5 +46,11 @@ public class DrinksRPS : MonoBehaviour
     void Update()
     {
 
+    }
+
+    internal void rocheRocheRoche()
+    {
+        text.text += "Roche Roche Roche! +3\n";
+        StartCoroutine(wait());
     }
 }

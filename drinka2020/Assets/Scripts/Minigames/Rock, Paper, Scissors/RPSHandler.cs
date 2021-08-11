@@ -17,6 +17,7 @@ public class RPSHandler : MonoBehaviour
     [SerializeField] public Text status;
     [SerializeField] CountdownRPS countdown;
     [SerializeField] public static RPSHandler rpsHandler;
+    public Stack<(Hand.Options, Hand.Options)> history;
    
     public bool resolved = false;
 
@@ -25,6 +26,7 @@ public class RPSHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        history = new Stack<(Hand.Options, Hand.Options)>();
         rpsHandler = gameObject.GetComponent<RPSHandler>();
         left.img.color = GameHandler.gameHandler.leftPlayer.color;
         right.img.color = GameHandler.gameHandler.rightPlayer.color;
@@ -40,6 +42,23 @@ public class RPSHandler : MonoBehaviour
     {
         left.canChoose = false;
         right.canChoose = false;
+        history.Push((left.choice, right.choice));
+        if(history.Count >= 3)
+        {
+            var a = history.Pop();
+            var b = history.Pop();
+            var c = history.Pop();
+            if(a == b && b == c && a == (Hand.Options.rock, Hand.Options.rock))
+            {
+                leftDrinks.rocheRocheRoche();
+                rightDrinks.rocheRocheRoche();
+                GameHandler.gameHandler.leftPlayer.drinks += 3;
+                GameHandler.gameHandler.rightPlayer.drinks += 3;
+            }
+            history.Push(c);
+            history.Push(b);
+            history.Push(a);
+        }
         if(left.choice == Hand.Options.none || right.choice == Hand.Options.none)
         {
             if(left.choice == Hand.Options.none)
@@ -81,6 +100,7 @@ public class RPSHandler : MonoBehaviour
             GameHandler.gameHandler.leftPlayer.drinks += 2;
             rightScore++;
         }
+        
         left.img.enabled = true;
         right.img.enabled = true;
         if(rightScore >= 3)
