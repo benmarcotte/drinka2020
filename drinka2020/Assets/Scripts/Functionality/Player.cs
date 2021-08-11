@@ -170,6 +170,11 @@ public class Player : MonoBehaviour
             gameObject.AddComponent<PlayerControlsTugOfWar>();
             gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Tug of War");
         }
+        else if (next == SceneManager.GetSceneByName("Tic Tac Toe"))
+        {
+            gameObject.AddComponent<PlayerControlTicTacToe>();
+            gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Tic Tac Toe");
+        }
         else if (next == SceneManager.GetSceneByName("Rock, Paper, Scissors"))
         {
             gameObject.AddComponent<PlayerControlsRockPaperScissors>();

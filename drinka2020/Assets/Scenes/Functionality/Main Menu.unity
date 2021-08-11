@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 1994112507}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 66712cbf0ae57364a96b366766ce6e55,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -491,7 +492,7 @@ MonoBehaviour:
   leftPlayer: {fileID: 0}
   isInOvertime: 0
   minigames:
-  - {fileID: 1549720449}
+  - {fileID: 614431198}
   activeMinigame: {fileID: 0}
   winner: {fileID: 0}
   rounds: 0
@@ -517,7 +518,7 @@ RectTransform:
   - {fileID: 263698510}
   - {fileID: 639912309}
   - {fileID: 348266186}
-  - {fileID: 1987894949}
+  - {fileID: 614431197}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1087,6 +1088,100 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 1037337123}
+--- !u!1001 &614431195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 264579029}
+    m_Modifications:
+    - target: {fileID: 1426780318474457139, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_Name
+      value: Tic Tac Toe
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 909.7192
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 539.64545
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1053.9932
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22a21d812dd4ea740a58fe22ff00c12b, type: 3}
+--- !u!1 &614431196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1426780318474457139, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+    type: 3}
+  m_PrefabInstance: {fileID: 614431195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &614431197 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4487095835027603649, guid: 22a21d812dd4ea740a58fe22ff00c12b,
+    type: 3}
+  m_PrefabInstance: {fileID: 614431195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &614431198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614431196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7cff86a6ef8a584287360de2fd67925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameName: 
 --- !u!1001 &639912307
 PrefabInstance:
   m_ObjectHideFlags: 0
