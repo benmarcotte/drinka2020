@@ -8,32 +8,30 @@ using UnityEngine.UI;
 public class TicTacToeHandler : MonoBehaviour
 {
     public Text text;
-    public Button button;
-    public Text buttonText;
-    public TicTacToeDrinks leftDrinks;
-    public TicTacToeDrinks rightDrinks;
+    [SerializeField] public TicTacToeDrinks leftDrinks;
+    [SerializeField] public TicTacToeDrinks rightDrinks;
+    [SerializeField] public Text leftCounter;
+    [SerializeField] public Text rightCounter;
     public Player leftPlayer;
     public Player rightPlayer;
     public static TicTacToeHandler ticTacToeHandler;
     public bool winnerDeclared = false;
-    public Sprite lost;
-    public Sprite victory;
-    public long framecount;
-    public Stopwatch timer;
     
     // Start is called before the first frame update
     void Start()
     {
-        timer = new Stopwatch();
+        text = gameObject.GetComponent<Text>();
         leftPlayer = GameHandler.gameHandler.leftPlayer;
         rightPlayer = GameHandler.gameHandler.rightPlayer;
         ticTacToeHandler = gameObject.GetComponent<TicTacToeHandler>();
-        
+        leftCounter.color = leftPlayer.color;
+        rightCounter.color = rightPlayer.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        leftCounter.text = leftPlayer.drinks.ToString();
+        rightCounter.text = rightPlayer.drinks.ToString();
     }
 }
