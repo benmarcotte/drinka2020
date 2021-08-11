@@ -39,13 +39,13 @@ public class NextGame : MonoBehaviour
 
     IEnumerator scroll()
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 30; i++)
         {
-            this.GetComponent<Text>().text = GameHandler.gameHandler.minigames[UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length)].gameName;
-           yield return new WaitForSecondsRealtime(0.1f);
+           gameObject.GetComponent<Text>().text = GameHandler.gameHandler.minigames[UnityEngine.Random.Range(0, GameHandler.gameHandler.minigames.Length)].gameName;
+           yield return new WaitForSecondsRealtime(0.05f);
         }
-        this.GetComponent<Text>().text = nextMinigame.gameName;
-        yield return new WaitForSecondsRealtime(3);
+        gameObject.GetComponent<Text>().text = nextMinigame.gameName;
+        yield return new WaitForSecondsRealtime(1.5f);
         SceneManager.LoadScene(nextMinigame.gameName);
     }
 

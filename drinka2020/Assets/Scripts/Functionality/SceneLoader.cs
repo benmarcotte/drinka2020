@@ -9,6 +9,8 @@ public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader sceneLoader;
     public bool finalIntermissionDone = false;
+    private int intermissions = 0;
+
     private void Awake()
     {
         int sceneLoaderCount = FindObjectsOfType<SceneLoader>().Length;
@@ -77,8 +79,13 @@ public class SceneLoader : MonoBehaviour
             finalIntermissionDone = true;
             SceneManager.LoadScene("Intermission");
         }
-        else if (UnityEngine.Random.Range(0, 2) == 1 || ((GameHandler.gameHandler.leftPlayer.drinks > 30 || GameHandler.gameHandler.rightPlayer.drinks > 30) && UnityEngine.Random.Range(0, 2) == 1))
+        else if (UnityEngine.Random.Range(0, 5) == 1 || ((GameHandler.gameHandler.leftPlayer.drinks > 30 || GameHandler.gameHandler.rightPlayer.drinks > 30) && UnityEngine.Random.Range(0, 2) == 1))
         {
+            intermissions++;
+            if(intermissions > 3)
+            {
+                finalIntermissionDone = true;
+            }
             SceneManager.LoadScene("Intermission");
         }
         else

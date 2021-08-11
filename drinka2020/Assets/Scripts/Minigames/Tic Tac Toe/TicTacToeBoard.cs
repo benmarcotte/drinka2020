@@ -54,9 +54,16 @@ public class TicTacToeBoard : MonoBehaviour
 
     public void decideFirst()
     {
-        //placeholder for now
-        currentTurn = Turn.left;
-        currentPlayer = GameHandler.gameHandler.leftPlayer;
+        if(UnityEngine.Random.Range(0, 2) == 1)
+        {
+            currentTurn = Turn.left;
+            currentPlayer = GameHandler.gameHandler.leftPlayer;
+        }
+        else
+        {
+            currentTurn = Turn.right;
+            currentPlayer = GameHandler.gameHandler.rightPlayer;
+        }
     }
 
     public bool isClaimed(Component button)
@@ -110,7 +117,7 @@ public class TicTacToeBoard : MonoBehaviour
 
     public void confirm(Turn side)
     {
-        if (side == currentTurn)
+        if (side == currentTurn && timer.started)
         {
             if (!isClaimed(currentButton))
             {

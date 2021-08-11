@@ -16,6 +16,7 @@ public class IntermissionCountdown : MonoBehaviour
     public SipCounter left;
     public SipCounter right;
     public bool started = false;
+    private bool going = false;
     public Text titleText;
     public Text description;
     void Start()
@@ -23,7 +24,7 @@ public class IntermissionCountdown : MonoBehaviour
         initialTime = (float)UnityEngine.Random.Range(8, 16);
         if (SceneLoader.sceneLoader.finalIntermissionDone)
         {
-            initialTime += (float)UnityEngine.Random.Range(5, 11);
+            initialTime *= 1.25f;
         }
         timeRemaining = initialTime;
         text = gameObject.GetComponent<Text>();
@@ -31,27 +32,31 @@ public class IntermissionCountdown : MonoBehaviour
         StartCoroutine(countdown());
         if (SceneLoader.sceneLoader.finalIntermissionDone)
         {
-            titleText.text = "Final Intermission!";
+            titleText.text = "Final Chug!";
             description.text = "Press a button for every sip you take!\nDrinks can go below 0!";
         }
         else
         {
-            titleText.text = "Intermission";
+            titleText.text = "Chug time!";
             description.text = "Press a button for every sip you take!";
         }
     }
 
     IEnumerator countdown()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         text.text = "3";
         yield return new WaitForSeconds(1f);
         text.text = "2";
         yield return new WaitForSeconds(1f);
         text.text = "1";
         yield return new WaitForSeconds(1f);
-        timer.Start();
+        text.text = "GO!";
         started = true;
+        going = true;
+        timer.Start();
+        yield return new WaitForSeconds(1f);
+        going = false;
     }
 
     public IEnumerator endSequences()
@@ -73,7 +78,10 @@ public class IntermissionCountdown : MonoBehaviour
         if (started)
         {
             timeRemaining = (initialTime - ((float)(timer.ElapsedMilliseconds / 1000f)));
-            text.text = timeRemaining.ToString("F2");
+            if (!going)
+            {
+                text.text = timeRemaining.ToString("F2");
+            }
         }
         if (timeRemaining <= 0f)
         {

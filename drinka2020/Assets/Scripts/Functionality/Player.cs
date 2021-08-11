@@ -93,35 +93,35 @@ public class Player : MonoBehaviour
         Debug.Log(current.name + ": " + next.name);
         if (current == SceneManager.GetSceneByName("Prep Screen") || current == SceneManager.GetSceneByName("Main Menu"))
         {
-            Destroy(gameObject.GetComponent<PlayerControlsPrepScreen>());
+            DestroyImmediate(gameObject.GetComponent<PlayerControlsPrepScreen>());
         }
         else if (current == SceneManager.GetSceneByName("War"))
         {
-            Destroy(gameObject.GetComponent<PlayerControlsWar>());
+            DestroyImmediate(gameObject.GetComponent<PlayerControlsWar>());
         }
         else if (current == SceneManager.GetSceneByName("Intermission"))
         {
-            Destroy(gameObject.GetComponent<PlayerControlsIntermission>());
+            DestroyImmediate(gameObject.GetComponent<PlayerControlsIntermission>());
         }
         else if (current == SceneManager.GetSceneByName("Sequences"))
         {
-            Destroy(gameObject.GetComponent<PlayerControlsSequences>());
+            DestroyImmediate(gameObject.GetComponent<PlayerControlsSequences>());
         }
         else if (current == SceneManager.GetSceneByName("Win"))
         {
-            Destroy(gameObject.GetComponent<WinScreenCheck>());
+            DestroyImmediate(gameObject.GetComponent<WinScreenCheck>());
         }
         else if(current == SceneManager.GetSceneByName("Tug of War"))
         {
-            Destroy(gameObject.GetComponent<PlayerControlsTugOfWar>());
+            DestroyImmediate(gameObject.GetComponent<PlayerControlsTugOfWar>());
         }
         else if (current == SceneManager.GetSceneByName("Rock, Paper, Scissors"))
         {
-            Destroy(gameObject.GetComponent<PlayerControlsRockPaperScissors>());
+            DestroyImmediate(gameObject.GetComponent<PlayerControlsRockPaperScissors>());
         }
         else if (next == SceneManager.GetSceneByName("Pong"))
         {
-            Destroy(gameObject.AddComponent<PlayerControlsPong>());
+            DestroyImmediate(gameObject.AddComponent<PlayerControlsPong>());
         }
 
         //Everything above destroys current controller component
@@ -146,7 +146,7 @@ public class Player : MonoBehaviour
         }
         else if (next == SceneManager.GetSceneByName("Main Menu"))
         {
-            Destroy(gameObject.gameObject);
+            DestroyImmediate(gameObject.gameObject);
         }
         else if (next == SceneManager.GetSceneByName("Quickdraw"))
         {
